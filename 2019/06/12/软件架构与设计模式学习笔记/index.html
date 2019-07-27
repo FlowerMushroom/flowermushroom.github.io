@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FlowerMushroom的博客">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        软件架构与设计模式学习笔记 - FlowerMushroom的博客 | FlowerMushroom&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/images/head.jpg" />
+        </div>
+        <div class="name">
+            <i>FlowerMushroom</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#（一）课程简介-amp-概述"><span class="toc-text">（一）课程简介&amp;概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、什么是软件体系结构"><span class="toc-text">一、什么是软件体系结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、各个时期的软件"><span class="toc-text">二、各个时期的软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）软件的机器指令时代："><span class="toc-text">（1）软件的机器指令时代：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）软件的汇编与早期的高级语言时代："><span class="toc-text">（2）软件的汇编与早期的高级语言时代：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）软件的面向结构时代："><span class="toc-text">（3）软件的面向结构时代：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）软件的面向对象时代："><span class="toc-text">（4）软件的面向对象时代：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、理解软件体系结构"><span class="toc-text">三、理解软件体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）宏观与微观"><span class="toc-text">（1）宏观与微观</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）自顶向下和自底向上"><span class="toc-text">（2）自顶向下和自底向上</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（二）软件体系结构基础"><span class="toc-text">（二）软件体系结构基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、软件体系结构的核心概念模型"><span class="toc-text">一、软件体系结构的核心概念模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Component（构件）"><span class="toc-text">（1）Component（构件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）Connector（连接件）"><span class="toc-text">（2）Connector（连接件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）Configuration（配置）"><span class="toc-text">（3）Configuration（配置）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、软件体系结构分析设计的两种基本方法："><span class="toc-text">二、软件体系结构分析设计的两种基本方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）分解（Decomposition）"><span class="toc-text">（1）分解（Decomposition）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）组合（Composition）"><span class="toc-text">（2）组合（Composition）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、系统架构的多维度分解模型："><span class="toc-text">三、系统架构的多维度分解模型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、软件体系结构的评价"><span class="toc-text">四、软件体系结构的评价</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）软件体系结构的功能特性"><span class="toc-text">（1）软件体系结构的功能特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）软件体系结构的非功能特性"><span class="toc-text">（2）软件体系结构的非功能特性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（三）软件体系结构建模"><span class="toc-text">（三）软件体系结构建模</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、体系结构的模型"><span class="toc-text">一、体系结构的模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、“4-1”视图模型"><span class="toc-text">二、“4+1”视图模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Logic-View（逻辑视图）"><span class="toc-text">（1）Logic View（逻辑视图）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）Development-View（开发视图）"><span class="toc-text">（2）Development View（开发视图）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）Process-View（进程视图）"><span class="toc-text">（3）Process View（进程视图）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）Physical-View（物理视图）"><span class="toc-text">（4）Physical View（物理视图）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（5）Scenarios-View（场景视图）"><span class="toc-text">（5）Scenarios View（场景视图）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（四）典型的软件体系结构风格"><span class="toc-text">（四）典型的软件体系结构风格</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、管道-过滤器体系结构风格-Pipe-Filter-Style-："><span class="toc-text">一、管道-过滤器体系结构风格 (Pipe-Filter Style)：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、基于事件的隐式调用风格-Event-Based-Implicit-Invocation-Style"><span class="toc-text">二、基于事件的隐式调用风格 (Event-Based Implicit Invocation Style)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、分层体系结构风格-Layered-Style"><span class="toc-text">三、分层体系结构风格 (Layered Style)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、仓库风格-Repository-Style"><span class="toc-text">四、仓库风格 (Repository Style)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（五）GRASP"><span class="toc-text">（五）GRASP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（六）创建型设计模式（Creational-Patterns）"><span class="toc-text">（六）创建型设计模式（Creational Patterns）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、工厂方法模式（Factory-Method）"><span class="toc-text">一、工厂方法模式（Factory Method）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Context-应用场景"><span class="toc-text">（1）Context(应用场景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）参与者"><span class="toc-text">（2）参与者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）优点"><span class="toc-text">（3）优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）缺点"><span class="toc-text">（4）缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、抽象工厂模式（Abstract-Factory）"><span class="toc-text">二、抽象工厂模式（Abstract Factory）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Context-应用场景-1"><span class="toc-text">（1）Context(应用场景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）参与者-1"><span class="toc-text">（2）参与者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）优点-1"><span class="toc-text">（3）优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）缺点-1"><span class="toc-text">（4）缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、原型模式（Prototype）"><span class="toc-text">三、原型模式（Prototype）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Context-应用场景-2"><span class="toc-text">（1）Context(应用场景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）参与者-2"><span class="toc-text">（2）参与者</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、单例模式（Singleton）"><span class="toc-text">四、单例模式（Singleton）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Context-应用场景-3"><span class="toc-text">（1）Context(应用场景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）参与者-3"><span class="toc-text">（2）参与者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）评价："><span class="toc-text">（3）评价：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、小结"><span class="toc-text">五、小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（七）结构型设计模式（Structural-Patterns）"><span class="toc-text">（七）结构型设计模式（Structural Patterns）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、适配器模式（Adapter）"><span class="toc-text">一、适配器模式（Adapter）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）作用"><span class="toc-text">（1）作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）Context-应用场景"><span class="toc-text">（2）Context(应用场景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）参与者"><span class="toc-text">（3）参与者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）优点"><span class="toc-text">（4）优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（5）缺点"><span class="toc-text">（5）缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（6）分类"><span class="toc-text">（6）分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-类的适配器模式-class-adapter"><span class="toc-text">1.类的适配器模式 class adapter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-对象的适配器模式-object-adapter"><span class="toc-text">2.对象的适配器模式 object adapter</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、组合模式（Composite）"><span class="toc-text">二、组合模式（Composite）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）参与者"><span class="toc-text">（1）参与者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）Context-应用场景"><span class="toc-text">（3）Context(应用场景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）优点-1"><span class="toc-text">（4）优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（5）缺点-1"><span class="toc-text">（5）缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、小结"><span class="toc-text">三、小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（八）行为型设计模式（Behavioral-Patterns）"><span class="toc-text">（八）行为型设计模式（Behavioral Patterns）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、命令模式（Command）"><span class="toc-text">一、命令模式（Command）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Context-应用场景-4"><span class="toc-text">（1）Context(应用场景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）评价"><span class="toc-text">（2）评价</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、迭代器模式（Iterator）"><span class="toc-text">二、迭代器模式（Iterator）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Context-应用场景-5"><span class="toc-text">（1）Context(应用场景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）参与者-4"><span class="toc-text">（2）参与者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）评价"><span class="toc-text">（3）评价</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、观察者模式（Observer）"><span class="toc-text">三、观察者模式（Observer）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）Context-应用场景-6"><span class="toc-text">（1）Context(应用场景)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）参与者-5"><span class="toc-text">（2）参与者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）评价-1"><span class="toc-text">（3）评价</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、小结"><span class="toc-text">四、小结</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        软件架构与设计模式学习笔记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-06-12 00:00:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#设计模式" title="设计模式">设计模式</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="（一）课程简介-amp-概述"><a href="#（一）课程简介-amp-概述" class="headerlink" title="（一）课程简介&amp;概述"></a>（一）课程简介&amp;概述</h1><p>对于大型、复杂、软件密度高(software-intensive)的系统而言，系统的宏观结构设计成为系统成败的决定性关键因素。</p>
+<h2 id="一、什么是软件体系结构"><a href="#一、什么是软件体系结构" class="headerlink" title="一、什么是软件体系结构"></a>一、什么是软件体系结构</h2><p>软件体系结构（Software Architecture）是：</p>
+<ol>
+<li>解决日益复杂的软件系统的分析不设计问题</li>
+<li>刻画大型复杂软件系统的静态结构与动态行为</li>
+<li>构造更大更复杂软件系统的有效工程方法</li>
+</ol>
+<p>的一种软件设计技术与软件工程方法。</p>
+<p>一个软件系统的体系结构是指它所包含的<strong>计算构件</strong>和这些<strong>构件间的交互作用</strong>。</p>
+<p>即：Software Architecture= SA = {components, connectors}</p>
+<p>Component（构件/组件）：系统的逻辑与功能结构组成单元。</p>
+<p>Connector（连接件）：构件间相互交互的机制与规则。</p>
+<h2 id="二、各个时期的软件"><a href="#二、各个时期的软件" class="headerlink" title="二、各个时期的软件"></a>二、各个时期的软件</h2><h3 id="（1）软件的机器指令时代："><a href="#（1）软件的机器指令时代：" class="headerlink" title="（1）软件的机器指令时代："></a>（1）软件的机器指令时代：</h3><p>这个时代的程序就是若干条机器指令所组成的一段顺序执行的计算指令，软件的结构表现为指令之间的顺序结构。</p>
+<h3 id="（2）软件的汇编与早期的高级语言时代："><a href="#（2）软件的汇编与早期的高级语言时代：" class="headerlink" title="（2）软件的汇编与早期的高级语言时代："></a>（2）软件的汇编与早期的高级语言时代：</h3><p>这个时代的软件的宏观结构体现为主-子程序的调用与被调用的结构。</p>
+<h3 id="（3）软件的面向结构时代："><a href="#（3）软件的面向结构时代：" class="headerlink" title="（3）软件的面向结构时代："></a>（3）软件的面向结构时代：</h3><p>在面向结构的软件开发时代，模块的聚集和嵌套形成层层调用的软件宏观结构。人们在设计软件时，开始先从软件模块的抽象结构粒度上考虑软件系统的宏观结构。</p>
+<h3 id="（4）软件的面向对象时代："><a href="#（4）软件的面向对象时代：" class="headerlink" title="（4）软件的面向对象时代："></a>（4）软件的面向对象时代：</h3><p>对于面向对象的软件系统，包（Package）或名字空间（Namespace）是对象的结构化组织，而系统的包结构或名字空间的划分来体现软件的一种宏观静态结构。</p>
+<h2 id="三、理解软件体系结构"><a href="#三、理解软件体系结构" class="headerlink" title="三、理解软件体系结构"></a>三、理解软件体系结构</h2><h3 id="（1）宏观与微观"><a href="#（1）宏观与微观" class="headerlink" title="（1）宏观与微观"></a>（1）宏观与微观</h3><p>系统体系结构设计（宏观）：体系结构模型</p>
+<p>系统详细设计（微观）：详细设计模型</p>
+<h3 id="（2）自顶向下和自底向上"><a href="#（2）自顶向下和自底向上" class="headerlink" title="（2）自顶向下和自底向上"></a>（2）自顶向下和自底向上</h3><p>对系统的设计过程：由总体到局部（Top-down）</p>
+<p>系统实现的过程：先局部再整体（Bottom-up）</p>
+<h1 id="（二）软件体系结构基础"><a href="#（二）软件体系结构基础" class="headerlink" title="（二）软件体系结构基础"></a>（二）软件体系结构基础</h1><h2 id="一、软件体系结构的核心概念模型"><a href="#一、软件体系结构的核心概念模型" class="headerlink" title="一、软件体系结构的核心概念模型"></a>一、软件体系结构的核心概念模型</h2><h3 id="（1）Component（构件）"><a href="#（1）Component（构件）" class="headerlink" title="（1）Component（构件）"></a>（1）Component（构件）</h3><p>Component（构件）：系统的逻辑与功能结构单元。</p>
+<hr>
+<p>构件是一种抽象概念表述。是对以各种具体实现技术的系统结构组成元素（如子系统、模块、包等）的统称。</p>
+<p>构件是对系统功能集中的一个功能子集的结构化封装与实现。每个构件对于系统而言，应具有一定功能性。</p>
+<hr>
+<p>构件通过其端口（Port）与外部环境交互。构件的端口（Port）表示了构件和外部环境的交互作用点。</p>
+<p>端口（Port）：构件与外界的交互作用点，是构件的外部可见特征（Visible Properties）。</p>
+<hr>
+<p>构件的可分解性：</p>
+<p>构件的可分解性：</p>
+<p>原子（atom）构件：不再需要进行分解的构件。</p>
+<p>复合（composite）构件：需要再进行分解的构件。</p>
+<hr>
+<p>分类：</p>
+<p>根据功能层次：基础构件、中层构件、高层构件。</p>
+<p>根据复用度：通用构件、专用构件。</p>
+<p>根据功能类别：数据构件、界面构件、控制构件、安全构件。</p>
+<h3 id="（2）Connector（连接件）"><a href="#（2）Connector（连接件）" class="headerlink" title="（2）Connector（连接件）"></a>（2）Connector（连接件）</h3><p>Connector（连接件）：构件间相互交互的机制或规则。</p>
+<p>机制：是指连接件的具体实现形式：如过程调用、共享存储区。</p>
+<p>规则：是指构件使用连接件应遵循的规范。如对“过程调用”这种连接件其规则是指调用的接口参数形式、共享存储区则是指其本身的数据存储结构。</p>
+<hr>
+<p>构件在交互过程中体现为不同的角色。</p>
+<p>一个连接件所涉及的角色可能是二元的，也有多元的。</p>
+<hr>
+<p>方向性：单向和双向。有返回值的函数调用为双向连接。</p>
+<p>性能特性：同步/异步连接、开放/安全连接、串行/并行 …</p>
+<h3 id="（3）Configuration（配置）"><a href="#（3）Configuration（配置）" class="headerlink" title="（3）Configuration（配置）"></a>（3）Configuration（配置）</h3><p>Configuration（配置）：构件与连接件的装配规约（Assemble Specification）。</p>
+<p>描述了构件通过连接件相互交互所形成的逻辑拓扑结构（Topology）。</p>
+<p>定义了构件、连接件的使用规则与约束。</p>
+<hr>
+<p>相同的构件集与连接件集，通过不同的配置可形成不同结构形态的软件体系结构：</p>
+<p>构件的端口与连接件的角色之间的关联关系；复合构件与其子构件的嵌套包含关系。</p>
+<h2 id="二、软件体系结构分析设计的两种基本方法："><a href="#二、软件体系结构分析设计的两种基本方法：" class="headerlink" title="二、软件体系结构分析设计的两种基本方法："></a>二、软件体系结构分析设计的两种基本方法：</h2><h3 id="（1）分解（Decomposition）"><a href="#（1）分解（Decomposition）" class="headerlink" title="（1）分解（Decomposition）"></a>（1）分解（Decomposition）</h3><p>按照系统功能分解的方式，将系统功能进行分解，每一个相对独立的功能分解模块形成系统结构的一个功能构件。</p>
+<h3 id="（2）组合（Composition）"><a href="#（2）组合（Composition）" class="headerlink" title="（2）组合（Composition）"></a>（2）组合（Composition）</h3><p>考虑系统的各功能构件间的相互关系，通过什么样的连接机制实现将各个独立的构件形成一个整体系统。</p>
+<h2 id="三、系统架构的多维度分解模型："><a href="#三、系统架构的多维度分解模型：" class="headerlink" title="三、系统架构的多维度分解模型："></a>三、系统架构的多维度分解模型：</h2><p>业务域分解、功能域分解、技术域分解、涉众域分解。</p>
+<p>架构分解过程模型：迭代的过程模型。</p>
+<h2 id="四、软件体系结构的评价"><a href="#四、软件体系结构的评价" class="headerlink" title="四、软件体系结构的评价"></a>四、软件体系结构的评价</h2><h3 id="（1）软件体系结构的功能特性"><a href="#（1）软件体系结构的功能特性" class="headerlink" title="（1）软件体系结构的功能特性"></a>（1）软件体系结构的功能特性</h3><p>软件体系结构的功能特性（Functional Property of the SA）：软件体系结构对软件需求规范中所定义的功能需求满足程度。</p>
+<h3 id="（2）软件体系结构的非功能特性"><a href="#（2）软件体系结构的非功能特性" class="headerlink" title="（2）软件体系结构的非功能特性"></a>（2）软件体系结构的非功能特性</h3><p>软件体系结构的非功能特性（Non-functional Property of the SA）：软件体系结构对软件需求规范中所定义的非功能需求满足程度。</p>
+<p>非功能特性体现了<strong>软件的质量</strong>，决定了一个软件系统的架构设计优劣。</p>
+<hr>
+<p>分为：运行期的非功能特性、开发期的非功能特性。</p>
+<p>运行期的非功能特性：性能、安全性、易用性、可用性、可伸缩性、互操作性、可靠性、健壮性。</p>
+<p>开发期的非功能特性：易理解性、可扩展性、可重用性、可测试性、可维护性、可移植性。</p>
+<h1 id="（三）软件体系结构建模"><a href="#（三）软件体系结构建模" class="headerlink" title="（三）软件体系结构建模"></a>（三）软件体系结构建模</h1><h2 id="一、体系结构的模型"><a href="#一、体系结构的模型" class="headerlink" title="一、体系结构的模型"></a>一、体系结构的模型</h2><p>从不同的视角（view-point），可以刻画系统的体系结构不同侧面。</p>
+<p>每一个不同视角的刻画均是对系统体系结构的一个描述，我们往往需要从不同视角来描述一个系统的体系结构。</p>
+<h2 id="二、“4-1”视图模型"><a href="#二、“4-1”视图模型" class="headerlink" title="二、“4+1”视图模型"></a>二、“4+1”视图模型</h2><p>​    By: Philippe Kruchten (1995)</p>
+<hr>
+<p>使用多个并发的视图来组织软件架构的描述，每一个视图只关心软件体系结构的一个侧面，5个视图结合在一起才能完整反映软件体系结构的全部内容。</p>
+<h3 id="（1）Logic-View（逻辑视图）"><a href="#（1）Logic-View（逻辑视图）" class="headerlink" title="（1）Logic View（逻辑视图）"></a>（1）Logic View（逻辑视图）</h3><p>Logic View（逻辑视图）：基于功能需求抽象，刻画系统的静态结构模型。</p>
+<p>视角：功能需求的分析理解与抽象；</p>
+<p>关注点：基于软件的功能性需求，是系统功能的抽象结构表述，关注系统提供给最终用户的功能。</p>
+<h3 id="（2）Development-View（开发视图）"><a href="#（2）Development-View（开发视图）" class="headerlink" title="（2）Development View（开发视图）"></a>（2）Development View（开发视图）</h3><p>Development View（开发视图）：考虑开发技术、过程与组织，刻画系统的开发管理结构模型。</p>
+<p>视角：软件的开发实现；</p>
+<p>关注点：是软件体系结构的逻辑视图在具体实现阶段的表示，关注软件实现的技术与组织管理要求及约束。</p>
+<h3 id="（3）Process-View（进程视图）"><a href="#（3）Process-View（进程视图）" class="headerlink" title="（3）Process View（进程视图）"></a>（3）Process View（进程视图）</h3><p>Process View（进程视图）：刻画系统的运行时的结构模型。</p>
+<p>视角：软件运行时(Run-time)的结构形态；</p>
+<p>关注点：基于软件的非功能性需求，是软件系统运行时的动态结构，关注的是系统非功能性需求的满足。</p>
+<h3 id="（4）Physical-View（物理视图）"><a href="#（4）Physical-View（物理视图）" class="headerlink" title="（4）Physical View（物理视图）"></a>（4）Physical View（物理视图）</h3><p>Physical View（物理视图）：逻辑视图中的各功能构件在安装部署环境中的映射，刻画系统的安装部署结构模型。</p>
+<p>视角：软件在实际安装部署环境中的结构形态；</p>
+<p>关注点：基于软件的非功能性需求，是软件系统安装运行时的动态结构，关注的是系统非功能性需求的满足。</p>
+<h3 id="（5）Scenarios-View（场景视图）"><a href="#（5）Scenarios-View（场景视图）" class="headerlink" title="（5）Scenarios View（场景视图）"></a>（5）Scenarios View（场景视图）</h3><p>Scenarios View（场景视图）：从系统使用的角度对系统结构的描述。它反映的是在完成一个系统功能时，系统各功能构件间的交互关系。</p>
+<p>视角：用户视角；</p>
+<p>关注点：基于软件的功能性需求，关注的是在完成一个系统功能时，系统各功能构件间的协作关系，增加设计的可理解性，为其它视图的分析设计服务。</p>
+<h1 id="（四）典型的软件体系结构风格"><a href="#（四）典型的软件体系结构风格" class="headerlink" title="（四）典型的软件体系结构风格"></a>（四）典型的软件体系结构风格</h1><h2 id="一、管道-过滤器体系结构风格-Pipe-Filter-Style-："><a href="#一、管道-过滤器体系结构风格-Pipe-Filter-Style-：" class="headerlink" title="一、管道-过滤器体系结构风格 (Pipe-Filter Style)："></a>一、管道-过滤器体系结构风格 (Pipe-Filter Style)：</h2><p>构件类型: 过滤器（Filter），数据处理构件</p>
+<p>连接件类型: 管道（Pipe），过滤器间的连接件</p>
+<hr>
+<ol>
+<li>每个处理步骤封装在一个过滤器构件中</li>
+<li>数据通过过滤器之间的管道传输</li>
+<li>重组过滤器可以建立相关的系统族（不同数据处理顺序或功能）</li>
+</ol>
+<hr>
+<p>逻辑视图：</p>
+<p>系统输入：文本文件，其他的数据源(Data Source)</p>
+<p>系统输出：数据宿/数据池（Data Sink）</p>
+<p>管道：负责实现相邻步骤之间的数据流动</p>
+<p>过滤器：数据流的独立处理构件，负责丰富、提炼或转换它的输入数据</p>
+<hr>
+<p>过滤器的工作方式：</p>
+<p>【被动过滤器（Passive Filter）】</p>
+<ul>
+<li>过滤器从前一个过滤器或数据源中拉出（pull）数据</li>
+<li>过滤器把输出数据压入（push）后一个过滤器或数据池（Data Sink）</li>
+</ul>
+<p>【主动过滤器（Active Filter）】</p>
+<ul>
+<li>过滤器以循环的方式工作，从前一个过滤器或数据源拉出输入数据并将其输出数据压入下一个过滤器或数据池（Data Sink）</li>
+</ul>
+<hr>
+<p>管道(Pipe)：</p>
+<p>表示过滤器之间的连接；数据源和第一个过滤器之间的连接；以及最后的过滤器和data sink之间的连接</p>
+<p>如果管道连接两个主动过滤器,那么管道需要迚行缓冲和同步</p>
+<p>管道可以实现数据在过滤器之间的数据转换，将一个过滤器的输出数据格式转换为其后接的过滤器的数据输入格式</p>
+<hr>
+<p>应用场景（Context）：</p>
+<ul>
+<li>处理或者转换输入数据流</li>
+<li>对数据的处理可以容易地分成几个处理步骤</li>
+<li>系统的升级要求可以通过替换/增加/重组处理步骤实现，有时甚至由使用者完成操作</li>
+<li>不同的处理步骤间不共享信息</li>
+</ul>
+<hr>
+<p>优点：</p>
+<ol>
+<li>高内聚和低耦合</li>
+<li>支持过滤器配置实现可扩展性/可伸缩性（Flexibility）</li>
+<li>支持过滤器构件的重用</li>
+<li>有利于系统的维护与演化更新（Evolution）</li>
+<li>可支持局部的并行处理以提高效率</li>
+</ol>
+<hr>
+<p>缺点：</p>
+<ol>
+<li>增量式处理数据时，存在效率问题</li>
+<li>数据格式转换的问题：数据转换额外开销</li>
+<li>不适合交互式应用系统</li>
+</ol>
+<h2 id="二、基于事件的隐式调用风格-Event-Based-Implicit-Invocation-Style"><a href="#二、基于事件的隐式调用风格-Event-Based-Implicit-Invocation-Style" class="headerlink" title="二、基于事件的隐式调用风格 (Event-Based Implicit Invocation Style)"></a>二、基于事件的隐式调用风格 (Event-Based Implicit Invocation Style)</h2><p>又称：<strong>事件驱动架构（Event Driven Architecture, EDA）</strong></p>
+<hr>
+<p><strong>显式调用（直接耦合）</strong></p>
+<p>构件之间的交互是建立在彼此知道对方端口</p>
+<p>构件的交互是固定的、预先设计的</p>
+<p><strong>隐式调用（间接耦合）</strong></p>
+<p>构件间的交互不是固定的、预先未知</p>
+<p>构件间交互无需彼此感知（不知道对方的端口）</p>
+<hr>
+<p>采用离散、异步的事件机制实现系统的构件间的松散、间接耦合的交互：</p>
+<ol>
+<li>系统预先设计定义一套事件主题（Event Scheme）</li>
+<li>系统中的其它构件预先注册一个或多个事件主题</li>
+<li>系统中的某个构件触发一个或多个事件</li>
+<li>当一个事件被触发，系统将事件发布给事先注册了该事件主题的所有构件</li>
+<li>这样，某个构件上的一个或多个事件的触发就导致了系统中其它构件对事件的响应</li>
+</ol>
+<hr>
+<p>构件类型: 事件源(Event Source)、事件处理者(Event Handler)、事件分发者(Event Dispatcher)</p>
+<p>连接件类型：事件（Event）机制</p>
+<hr>
+<p>应用场景（Context）：适用于异步、并发性的系统</p>
+<ol>
+<li>对事件的处理顺序无要求的系统</li>
+<li>事件的处理要求具有很好的灵活性</li>
+<li>非集中式控制的软件系统</li>
+</ol>
+<hr>
+<p>优点：</p>
+<p>系统具有很好的灵活性，系统易于伸缩扩展</p>
+<hr>
+<p>缺点：</p>
+<ol>
+<li>系统控制权的问题：无中心控制系统</li>
+<li>数据的交换问题：一些情况下，基于事件的系统必须依靠一个共享的仓库进行交互。在这些情况下，全局性能和资源管理便成了问题。</li>
+<li>事件处理顺序控制问题 </li>
+</ol>
+<h2 id="三、分层体系结构风格-Layered-Style"><a href="#三、分层体系结构风格-Layered-Style" class="headerlink" title="三、分层体系结构风格 (Layered Style)"></a>三、分层体系结构风格 (Layered Style)</h2><p>应用场景（Context）：</p>
+<ol>
+<li><p>一个需要分解的大系统</p>
+<p>系统的显著特征是混合了低层与高层问题</p>
+<p>系统的需求本身定义了多个层次上的需求</p>
+</li>
+<li><p>系统规格说明描述了高层任务，并希望可移植性</p>
+</li>
+<li><p>高层任务到平台的映射不是直接的</p>
+</li>
+<li><p>系统需要满足以下非功能性特性：</p>
+<p>后期源代码的改动应该不影响到整个系统</p>
+<p>系统的各个部分应该可以替换。构件应该可以有不同的实现而不影响其他的构件</p>
+<p>提高构件的内聚性</p>
+<p>复杂构件的进一步分解</p>
+<p>设计和开发系统时，工作界限必须清楚     </p>
+</li>
+</ol>
+<hr>
+<p>优点：</p>
+<ol>
+<li>层的可重用性</li>
+<li>标准化的支持</li>
+<li>局部依赖特性</li>
+<li>可替换性</li>
+</ol>
+<hr>
+<p>缺点：</p>
+<ol>
+<li>层间的依赖性</li>
+<li>当对低层的修改由于某种原因影响了高层的时候，可能引起底层之上的多个层次</li>
+<li>效率问题：过多的层次造成从最上层到最下层需要进行逐层的交互等</li>
+</ol>
+<h2 id="四、仓库风格-Repository-Style"><a href="#四、仓库风格-Repository-Style" class="headerlink" title="四、仓库风格 (Repository Style)"></a>四、仓库风格 (Repository Style)</h2><p>以数据为中心（Data-Center）的体系结构风格</p>
+<hr>
+<p>数据中心定义了一种共享的数据结构</p>
+<p>构件之间通过数据中心分布式协同工作</p>
+<hr>
+<p>构件类型：独立构件（Independent Component）、 仲裁者（Mediator）</p>
+<p>连接件类型：仓库（Repository）</p>
+<hr>
+<p>两种类型：</p>
+<p>被动仓库：Database（数据库），由独立构件访问存取仓库来驱动系统运行</p>
+<p>主动仓库：Blackboard（黑板），由仓库的数据或状态来触发独立构件做相应的处理，驱动系统运行</p>
+<hr>
+<p>优点：</p>
+<ol>
+<li>便于多构件间共享大量数据，而不必关心数据是何时产生的、由谁提供的，以及通过何种途径来提供</li>
+<li>便于将新的构件作为知识源添加到系统中来（Blackboard风格）</li>
+</ol>
+<hr>
+<p>缺点：</p>
+<ol>
+<li>共享数据结构的修改变得非常困难</li>
+<li>需要同步机制和加锁机制来保证共享数据的完整性和一致性，增大了系统设计的复杂度</li>
+</ol>
+<h1 id="（五）GRASP"><a href="#（五）GRASP" class="headerlink" title="（五）GRASP"></a>（五）GRASP</h1><p>GRASP</p>
+<p>General Responsibility Assignment Software Principles</p>
+<p>通用职责分配软件原则 </p>
+<p>核心思想：职责分配（Responsibility Assignment）</p>
+<hr>
+<p>9个基本原则：</p>
+<p>信息与家(Information expert)</p>
+<p>创建者(Creator)</p>
+<p>高内聚(High Cohesion)</p>
+<p>低耦合(Low Coupling)</p>
+<p>控制者(Controller)</p>
+<p>多态（Polymorphism）</p>
+<p>纯虚构（Pure Fabrication）</p>
+<p>间接性（Indirection）</p>
+<p>变化预防（Protected Variations）</p>
+<h1 id="（六）创建型设计模式（Creational-Patterns）"><a href="#（六）创建型设计模式（Creational-Patterns）" class="headerlink" title="（六）创建型设计模式（Creational Patterns）"></a>（六）创建型设计模式（Creational Patterns）</h1><h2 id="一、工厂方法模式（Factory-Method）"><a href="#一、工厂方法模式（Factory-Method）" class="headerlink" title="一、工厂方法模式（Factory Method）"></a>一、工厂方法模式（Factory Method）</h2><p>为某一个产品族对象的创建，定义统一的Factory Method接口，并由子类具体实现对象创建。</p>
+<h3 id="（1）Context-应用场景"><a href="#（1）Context-应用场景" class="headerlink" title="（1）Context(应用场景)"></a>（1）Context(应用场景)</h3><ol>
+<li>当一个类不知道它所需要的对象的类时：在工厂方法模式中，客户端不需要知道具体产品类的类名，只需要知道所对应的工厂即可</li>
+<li>当一个类希望通过其子类来指定创建对象时：在工厂方法模式中，对于抽象工厂类只需要提供一个创建产品的接口，而由其子类来确定具体要创建的对象，利用面向对象的多态性和里氏代换原则，在程序运行时，子类对象将覆盖父类对象，从而使得系统更容易扩展</li>
+<li>将创建对象的任务委托给多个工厂子类中的某一个，客户端在使用时可以无须关心是哪一个工厂子类创建产品子类，需要时再动态指定，可将具体工厂类的类名存储在配置文件或数据库中</li>
+</ol>
+<h3 id="（2）参与者"><a href="#（2）参与者" class="headerlink" title="（2）参与者"></a>（2）参与者</h3><ol>
+<li>抽象产品类 Product</li>
+<li>具体产品类 ConcreteProduct</li>
+<li>抽象工厂类 Creator</li>
+<li>具体工厂类 ConcreteCreator </li>
+</ol>
+<h3 id="（3）优点"><a href="#（3）优点" class="headerlink" title="（3）优点"></a>（3）优点</h3><ol>
+<li>为一组相关或相似对象（产品族）的创建提供了统一的创建接口（工厂方法）</li>
+<li>将产品族对象与使用者（Client）之间解耦，使用者无需了解产品族对象创建知识就可获得和使用产品族对象</li>
+</ol>
+<h3 id="（4）缺点"><a href="#（4）缺点" class="headerlink" title="（4）缺点"></a>（4）缺点</h3><p>需要抽象工厂类和其相应的子类作为工厂方法的定义和实现，如果设计确实需要抽象工厂类和子类存在，则很好；否则的话，需要增加抽象工厂类与其子类</p>
+<h2 id="二、抽象工厂模式（Abstract-Factory）"><a href="#二、抽象工厂模式（Abstract-Factory）" class="headerlink" title="二、抽象工厂模式（Abstract Factory）"></a>二、抽象工厂模式（Abstract Factory）</h2><p>解决多个产品族对象的创建工作，专门定义一个用于创建这些对象的接口(基类)。客户只需与这个基接口打交道，不必考虑实体类的类型</p>
+<h3 id="（1）Context-应用场景-1"><a href="#（1）Context-应用场景-1" class="headerlink" title="（1）Context(应用场景)"></a>（1）Context(应用场景)</h3><ol>
+<li>一个系统不要求依赖产品类实例如何被创建、组合和表达</li>
+<li>这个系统有多个系列产品，而系统中只消费其中某一系列产品</li>
+<li>系统要求提供一个产品类的库，所有产品以同样的接口出现，客户端不需要依赖具体实现 </li>
+</ol>
+<h3 id="（2）参与者-1"><a href="#（2）参与者-1" class="headerlink" title="（2）参与者"></a>（2）参与者</h3><ol>
+<li>抽象产品族（Abstract Product）</li>
+<li>抽象产品（Product）</li>
+<li>具体产品（Concrete Product）</li>
+<li>抽象工厂（Factory）</li>
+<li>具体工厂（Concrete Factory）</li>
+</ol>
+<h3 id="（3）优点-1"><a href="#（3）优点-1" class="headerlink" title="（3）优点"></a>（3）优点</h3><ol>
+<li>Concrete Factory中的工厂方法把产品对象创建封装起来，并将具体的产品类与Client分离</li>
+<li>保证产品族对象创建接口的一致性（统一的产品族对象创建接口）</li>
+</ol>
+<h3 id="（4）缺点-1"><a href="#（4）缺点-1" class="headerlink" title="（4）缺点"></a>（4）缺点</h3><p>Concrete Factory对象的工厂方法数目对应product种类数目，增加新的product种类比较困难，要影响到factory的基类，进而影响到所有的子类</p>
+<h2 id="三、原型模式（Prototype）"><a href="#三、原型模式（Prototype）" class="headerlink" title="三、原型模式（Prototype）"></a>三、原型模式（Prototype）</h2><p>以一个已有的对象作为原型，通过它来创建新的对象。在增加新的对象的时候，新对象的细节创建工作由自己来负责，从而使新对象的创建过程与Client隔离开来</p>
+<h3 id="（1）Context-应用场景-2"><a href="#（1）Context-应用场景-2" class="headerlink" title="（1）Context(应用场景)"></a>（1）Context(应用场景)</h3><ol>
+<li>当产品的创建过程要独立于系统时</li>
+<li>当产品的类型是在运行时被指定的情况下</li>
+<li>避免创建一个与product层次平行的factory层次时</li>
+<li>当产品类的实例只能是几种确定的不同实例状态中的一种 </li>
+</ol>
+<h3 id="（2）参与者-2"><a href="#（2）参与者-2" class="headerlink" title="（2）参与者"></a>（2）参与者</h3><ol>
+<li>原型类（Prototype）</li>
+<li>具体原型类（ConcretePrototype）</li>
+<li>用户类（Client） .</li>
+</ol>
+<h2 id="四、单例模式（Singleton）"><a href="#四、单例模式（Singleton）" class="headerlink" title="四、单例模式（Singleton）"></a>四、单例模式（Singleton）</h2><p>确保1个类只有1个实例化对象，提供一个全局访问点</p>
+<h3 id="（1）Context-应用场景-3"><a href="#（1）Context-应用场景-3" class="headerlink" title="（1）Context(应用场景)"></a>（1）Context(应用场景)</h3><ol>
+<li>类必须只有一个实例，并且必须可以从已知的访问点对客户端进行访问</li>
+<li>当唯一的实例应该通过子类进行扩展时，客户机应该能够在不修改代码的情况下使用扩展实例</li>
+</ol>
+<h3 id="（2）参与者-3"><a href="#（2）参与者-3" class="headerlink" title="（2）参与者"></a>（2）参与者</h3><p>单例类（Singleton） .</p>
+<h3 id="（3）评价："><a href="#（3）评价：" class="headerlink" title="（3）评价："></a>（3）评价：</h3><ol>
+<li>提供了一种全局化的单一对象实例设计方法</li>
+<li>在单态设计模式基础上，可扩展设计受限数目的对象实例创建</li>
+</ol>
+<h2 id="五、小结"><a href="#五、小结" class="headerlink" title="五、小结"></a>五、小结</h2><ol>
+<li>工厂方法模式Factory Method：通过一个一致化的factory method完成产品对象的创建</li>
+<li>抽象工厂模式Abstract Factory：基于多个factory method实现多个product族对象的创建</li>
+<li>原型模式Prototype：通过product原型来clone创建product对象</li>
+<li>建造者模式Builder：完成一个包含多个子对象的复合对象的构造</li>
+<li>单例模式Singleton：Product类的单对象实例创建</li>
+<li>Finder：把对象的获取过程与客户隔离开</li>
+</ol>
+<h1 id="（七）结构型设计模式（Structural-Patterns）"><a href="#（七）结构型设计模式（Structural-Patterns）" class="headerlink" title="（七）结构型设计模式（Structural Patterns）"></a>（七）结构型设计模式（Structural Patterns）</h1><h2 id="一、适配器模式（Adapter）"><a href="#一、适配器模式（Adapter）" class="headerlink" title="一、适配器模式（Adapter）"></a>一、适配器模式（Adapter）</h2><p>定义一个包装类，用于包装不兼容接口的对象</p>
+<h3 id="（1）作用"><a href="#（1）作用" class="headerlink" title="（1）作用"></a>（1）作用</h3><p>把一个类的接口变换成客户端所期待的另一种接口，从而使原本接口不匹配而无法一起工作的两个类能够在一起工作</p>
+<h3 id="（2）Context-应用场景"><a href="#（2）Context-应用场景" class="headerlink" title="（2）Context(应用场景)"></a>（2）Context(应用场景)</h3><ol>
+<li>系统需要复用现有类，而该类的接口不符合系统的需求，可以使用适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作</li>
+<li>多个组件功能类似，但接口不统一且可能会经常切换时，可使用适配器模式，使得客户端可以以统一的接口使用它们</li>
+</ol>
+<h3 id="（3）参与者"><a href="#（3）参与者" class="headerlink" title="（3）参与者"></a>（3）参与者</h3><ol>
+<li>适配器 Adapter</li>
+<li>适配者 Adaptee</li>
+<li>客户类 Client</li>
+<li>目标类 Target</li>
+</ol>
+<h3 id="（4）优点"><a href="#（4）优点" class="headerlink" title="（4）优点"></a>（4）优点</h3><p>更好的复用性；透明、简单；更好的扩展性；解耦性；符合开放-关闭原则</p>
+<h3 id="（5）缺点"><a href="#（5）缺点" class="headerlink" title="（5）缺点"></a>（5）缺点</h3><p>过多的使用适配器，会让系统非常零乱，不易整体进行把握</p>
+<h3 id="（6）分类"><a href="#（6）分类" class="headerlink" title="（6）分类"></a>（6）分类</h3><h4 id="1-类的适配器模式-class-adapter"><a href="#1-类的适配器模式-class-adapter" class="headerlink" title="1.类的适配器模式 class adapter"></a>1.类的适配器模式 class adapter</h4><p>Adapter与Adaptee是继承关系</p>
+<p>无法适配Adaptee的子类</p>
+<p>可以重载Adaptee的行为</p>
+<h4 id="2-对象的适配器模式-object-adapter"><a href="#2-对象的适配器模式-object-adapter" class="headerlink" title="2.对象的适配器模式 object adapter"></a>2.对象的适配器模式 object adapter</h4><p>Adapter与Adaptee是委派关系</p>
+<p>可以适配Adaptee的所有子类</p>
+<h2 id="二、组合模式（Composite）"><a href="#二、组合模式（Composite）" class="headerlink" title="二、组合模式（Composite）"></a>二、组合模式（Composite）</h2><p>将对象组合到树结构中以表示部分-整体层次结构。Composite允许客户端统一地处理单个对象和对象的组合 </p>
+<h3 id="（1）参与者"><a href="#（1）参与者" class="headerlink" title="（1）参与者"></a>（1）参与者</h3><p>Client, Component, Leaf, Composite</p>
+<h3 id="（3）Context-应用场景"><a href="#（3）Context-应用场景" class="headerlink" title="（3）Context(应用场景)"></a>（3）Context(应用场景)</h3><ol>
+<li>表示对象的部分-整体层次结构</li>
+<li>希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象</li>
+</ol>
+<h3 id="（4）优点-1"><a href="#（4）优点-1" class="headerlink" title="（4）优点"></a>（4）优点</h3><ol>
+<li>定义了包含leaf对象和composite对象的类层次接口——递归结构</li>
+<li>客户一致地处理复合对象和单个对象</li>
+<li>易于增加新类型的组件</li>
+</ol>
+<h3 id="（5）缺点-1"><a href="#（5）缺点-1" class="headerlink" title="（5）缺点"></a>（5）缺点</h3><p>很难限制组合中的组件：有时你希望一个组合只能有某些特定的组件。使用Composite时，你不能依赖类型系统施加这些约束，而必须在运行时刻进行检查 </p>
+<h2 id="三、小结"><a href="#三、小结" class="headerlink" title="三、小结"></a>三、小结</h2><ol>
+<li>Adapter：用于两个不兼容接口之间的转接</li>
+<li>Bridge：用于将接口的抽象与多个可能的实现连接起来</li>
+<li>Facade：用于为复杂的子系统定义一个新的简单易用的接口</li>
+<li>Composite：用于构造对象组合结构</li>
+<li>Decorator：用于为对象增加新的职责（修改对象的接口）</li>
+<li>Proxy：为目标对象提供一个代理者</li>
+<li>Flyweight：针对细粒度对象的一种全局控制手段。</li>
+</ol>
+<h1 id="（八）行为型设计模式（Behavioral-Patterns）"><a href="#（八）行为型设计模式（Behavioral-Patterns）" class="headerlink" title="（八）行为型设计模式（Behavioral Patterns）"></a>（八）行为型设计模式（Behavioral Patterns）</h1><h2 id="一、命令模式（Command）"><a href="#一、命令模式（Command）" class="headerlink" title="一、命令模式（Command）"></a>一、命令模式（Command）</h2><p>将请求封装为对象，从而允许您用不同的请求、队列或日志请求参数化客户机，并支持可撤消操作</p>
+<h3 id="（1）Context-应用场景-4"><a href="#（1）Context-应用场景-4" class="headerlink" title="（1）Context(应用场景)"></a>（1）Context(应用场景)</h3><ol>
+<li>需要封装表示对象间的调用交互</li>
+<li>需要实现对象间交互调用的管理</li>
+<li>需要支持对象间交互调用的undo/redo</li>
+<li>记录对象间交互调用以便系统回滚</li>
+<li>需保证对象间交互的事务完整性</li>
+</ol>
+<h3 id="（2）评价"><a href="#（2）评价" class="headerlink" title="（2）评价"></a>（2）评价</h3><ol>
+<li>对象间调用交互的解耦</li>
+<li>支持对象间交互的redo/undo – 调用重用</li>
+<li>组合对象间的多个调用交互–宏调用/批处理</li>
+<li>易扩展对象间交互–通过继承定义新的Command对象 .</li>
+</ol>
+<h2 id="二、迭代器模式（Iterator）"><a href="#二、迭代器模式（Iterator）" class="headerlink" title="二、迭代器模式（Iterator）"></a>二、迭代器模式（Iterator）</h2><p>用于支持集合对象的遍历操作，而无需暴露集合对象的内部表示</p>
+<h3 id="（1）Context-应用场景-5"><a href="#（1）Context-应用场景-5" class="headerlink" title="（1）Context(应用场景)"></a>（1）Context(应用场景)</h3><ol>
+<li>访问集合对象而无需暴露其内部存储结构</li>
+<li>可提供多种遍历操作方法</li>
+<li>为不同遍历操作方法提供一个统一的接口形式</li>
+</ol>
+<h3 id="（2）参与者-4"><a href="#（2）参与者-4" class="headerlink" title="（2）参与者"></a>（2）参与者</h3><ol>
+<li>迭代器（Iterator）</li>
+<li>具体迭代器（ConcreteIterator）</li>
+<li>集合（Aggregate）</li>
+<li>具体集合（ConcreteAggregate）</li>
+</ol>
+<h3 id="（3）评价"><a href="#（3）评价" class="headerlink" title="（3）评价"></a>（3）评价</h3><ol>
+<li>支持多种集合遍历</li>
+<li>迭代器简化了集合接口</li>
+<li>一个集合上可以有多种遍历</li>
+</ol>
+<h2 id="三、观察者模式（Observer）"><a href="#三、观察者模式（Observer）" class="headerlink" title="三、观察者模式（Observer）"></a>三、观察者模式（Observer）</h2><p>支持对象间1对多的交互调用方式</p>
+<h3 id="（1）Context-应用场景-6"><a href="#（1）Context-应用场景-6" class="headerlink" title="（1）Context(应用场景)"></a>（1）Context(应用场景)</h3><ol>
+<li>当一个抽象有两个方面，一个依赖于另一个时。将这些方面封装在单独的对象中，可以独立地改变和重用它们</li>
+<li>当一个对象的更改需要更改其他对象，而您不知道需要更改多少对象时</li>
+<li>当一个对象应该能够通知其他对象而不需要假设这些对象是谁。换句话说，您不希望这些对象紧密耦合</li>
+</ol>
+<h3 id="（2）参与者-5"><a href="#（2）参与者-5" class="headerlink" title="（2）参与者"></a>（2）参与者</h3><ol>
+<li>Subject: 目标</li>
+<li>ConcreteSubject: 具体目标</li>
+<li>Observer: 观察者</li>
+<li>ConcreteObserver: 具体观察者</li>
+</ol>
+<h3 id="（3）评价-1"><a href="#（3）评价-1" class="headerlink" title="（3）评价"></a>（3）评价</h3><ol>
+<li>抽象目标与观察者之间的耦合</li>
+<li>支持广播</li>
+<li>意想不到的更新</li>
+</ol>
+<h2 id="四、小结"><a href="#四、小结" class="headerlink" title="四、小结"></a>四、小结</h2><ol>
+<li>Strategy、Iterator、Mediator、State、Command：用一个对象来封装某些特性，比如变化、交互、状态、行为、命令</li>
+<li>Observer：建立起subject和observer之间的松耦合连接</li>
+<li>Mediator：把约束限制集中起来，中心控制</li>
+<li>Command：侧重于命令的总体管理</li>
+<li>Chain of Responsibility：侧重于命令被正确处理</li>
+<li>Interpreter用于复合结构中操作的执行过程 </li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="">FlowerMushroom&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="">この世界私は大好きです</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
