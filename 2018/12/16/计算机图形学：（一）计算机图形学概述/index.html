@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FlowerMushroom的博客">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        计算机图形学：（一）计算机图形学概述 - FlowerMushroom的博客 | FlowerMushroom&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/images/head.jpg" />
+        </div>
+        <div class="name">
+            <i>FlowerMushroom</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1-研究内容"><span class="toc-text">1.1 研究内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#（1）什么是计算机图形学"><span class="toc-text">（1）什么是计算机图形学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（2）计算机图形学研究的内容"><span class="toc-text">（2）计算机图形学研究的内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-图形的输入"><span class="toc-text">1. 图形的输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-图形的处理"><span class="toc-text">2. 图形的处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-图形的输出"><span class="toc-text">3.图形的输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（3）计算机中表示图的方法"><span class="toc-text">（3）计算机中表示图的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-点阵表示"><span class="toc-text">1.点阵表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-参数表示"><span class="toc-text">2.参数表示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（4）图形与图像"><span class="toc-text">（4）图形与图像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-图像"><span class="toc-text">1. 图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-图形"><span class="toc-text">2. 图形</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-2-发展历史"><span class="toc-text">1.2 发展历史</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-3-图形显示设备"><span class="toc-text">1.3 图形显示设备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#（1）图形显示和图形绘制"><span class="toc-text">（1）图形显示和图形绘制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（2）阴极射线管-CRT-Cathode-Ray-Tube"><span class="toc-text">（2）阴极射线管(CRT, Cathode-Ray Tube)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-组成"><span class="toc-text">1. 组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-工作原理"><span class="toc-text">2.工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-相关概念"><span class="toc-text">3. 相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-刷新"><span class="toc-text">[1] 刷新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-像素-Pixel"><span class="toc-text">[2] 像素(Pixel)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-分辨率-Resolution"><span class="toc-text">[3] 分辨率(Resolution)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（3）彩色阴极射线管"><span class="toc-text">（3）彩色阴极射线管</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-原理"><span class="toc-text">1. 原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-显示器能同时显示的颜色个数"><span class="toc-text">2. 显示器能同时显示的颜色个数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（4）随机扫描显示器"><span class="toc-text">（4）随机扫描显示器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-特点"><span class="toc-text">1. 特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-工作原理-1"><span class="toc-text">2. 工作原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（5）光栅扫描显示器"><span class="toc-text">（5）光栅扫描显示器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-相关概念"><span class="toc-text">1.相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-扫描线（Scan-Line）"><span class="toc-text">[1] 扫描线（Scan Line）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-帧（Frame）"><span class="toc-text">[2] 帧（Frame）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-水平回扫期-horizontal-retrace"><span class="toc-text">[3] 水平回扫期 (horizontal retrace)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-垂直回扫期-Vertical-retrace"><span class="toc-text">[4] 垂直回扫期 (Vertical retrace)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-绘图过程"><span class="toc-text">2. 绘图过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-显示器的分辨率"><span class="toc-text">3. 显示器的分辨率</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（6）光栅图形显示系统"><span class="toc-text">（6）光栅图形显示系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-组成-1"><span class="toc-text">1. 组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-优点"><span class="toc-text">2. 优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-缺点"><span class="toc-text">3. 缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（7）单色显示系统"><span class="toc-text">（7）单色显示系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#（8）显存相关的问题"><span class="toc-text">（8）显存相关的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-帧缓存与显示器分辨率的关系"><span class="toc-text">1. 帧缓存与显示器分辨率的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-高分辨率和真彩要求有大的显存"><span class="toc-text">2. 高分辨率和真彩要求有大的显存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-采用查色表（Lookup-Table）机制"><span class="toc-text">[1]采用查色表（Lookup Table）机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-采用隔行扫描的方法"><span class="toc-text">[2]采用隔行扫描的方法</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        计算机图形学：（一）计算机图形学概述
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-12-16 11:57:00</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#图形学" title="图形学">图形学</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p><strong>重点</strong>：掌握计算机图形学研究的内容、应用领域以及图形硬件和软件系统。</p>
+<p><strong>难点</strong>：理解光栅扫描显示器的工作原理以及彩色显示机理。</p>
+<h1 id="1-1-研究内容"><a href="#1-1-研究内容" class="headerlink" title="1.1 研究内容"></a>1.1 研究内容</h1><h2 id="（1）什么是计算机图形学"><a href="#（1）什么是计算机图形学" class="headerlink" title="（1）什么是计算机图形学"></a>（1）什么是计算机图形学</h2><p>ISO的定义：计算机图形学是研究通过计算机将数据转换为图形，并在专门的显示设备上显示的原理、方法和技术的学科。</p>
+<h2 id="（2）计算机图形学研究的内容"><a href="#（2）计算机图形学研究的内容" class="headerlink" title="（2）计算机图形学研究的内容"></a>（2）计算机图形学研究的内容</h2><h3 id="1-图形的输入"><a href="#1-图形的输入" class="headerlink" title="1. 图形的输入"></a>1. 图形的输入</h3><p>如何开发利用图形输入设备及软件将图形输入到计算机中去，以便作各种处理。</p>
+<h3 id="2-图形的处理"><a href="#2-图形的处理" class="headerlink" title="2. 图形的处理"></a>2. 图形的处理</h3><p>包括对图形进行变换（几何变换，投影变换）和运算（集合运算），着色，形变等… …</p>
+<h3 id="3-图形的输出"><a href="#3-图形的输出" class="headerlink" title="3.图形的输出"></a>3.图形的输出</h3><p>如何将图形特定的表示形式转换成图形输出系统便于接受的表示形式，并将图形在显示屏或打印机等输出设备上输出</p>
+<h2 id="（3）计算机中表示图的方法"><a href="#（3）计算机中表示图的方法" class="headerlink" title="（3）计算机中表示图的方法"></a>（3）计算机中表示图的方法</h2><h3 id="1-点阵表示"><a href="#1-点阵表示" class="headerlink" title="1.点阵表示"></a>1.点阵表示</h3><p>简称为<strong>图像</strong>（<strong>Image</strong>）：枚举出图形中所有的点</p>
+<h3 id="2-参数表示"><a href="#2-参数表示" class="headerlink" title="2.参数表示"></a>2.参数表示</h3><p>简称为<strong>图形</strong>（<strong>Graphics</strong>）：用图形的形状参数（方程或分析表达式的系数，线段的端点坐标等）和属性参数（颜色、线型等）来表示图形</p>
+<h2 id="（4）图形与图像"><a href="#（4）图形与图像" class="headerlink" title="（4）图形与图像"></a>（4）图形与图像</h2><h3 id="1-图像"><a href="#1-图像" class="headerlink" title="1. 图像"></a>1. 图像</h3><p>图像纯指计算机内以位图(Bitmap)形式存在的灰度信息。</p>
+<h3 id="2-图形"><a href="#2-图形" class="headerlink" title="2. 图形"></a>2. 图形</h3><p>图形含有几何属性，更强调场景的几何表示，是由场景的几何模型和景物的物理属性共同组成的。</p>
+<p>图形主要分为两类：</p>
+<ol>
+<li>基于线条信息表示（如工程图、等高线地图、曲面的线框图等）</li>
+<li>明暗图(Shading) （如：真实感图形）</li>
+</ol>
+<h1 id="1-2-发展历史"><a href="#1-2-发展历史" class="headerlink" title="1.2 发展历史"></a>1.2 发展历史</h1><p>近二十年中，国际标准化组织ISO已经批准和正在讨论的与计算机图形有关的标准有：GKS、GKS-3D、PHIGS、CGM、CGI、IGES、STEP</p>
+<p>事实标准：SGI的OpenGL，微软的Direct X，Adobe的Postscript等</p>
+<h1 id="1-3-图形显示设备"><a href="#1-3-图形显示设备" class="headerlink" title="1.3 图形显示设备"></a>1.3 图形显示设备</h1><h2 id="（1）图形显示和图形绘制"><a href="#（1）图形显示和图形绘制" class="headerlink" title="（1）图形显示和图形绘制"></a>（1）图形显示和图形绘制</h2><p>图形输出包括图形的显示和图形的绘制</p>
+<p><strong>图形显示</strong>：指的是在屏幕上输出图形</p>
+<p><strong>图形绘制</strong>：通常指把图形画在纸上，也称硬拷贝，打印机和绘图仪是两种最常用的硬拷贝设备</p>
+<h2 id="（2）阴极射线管-CRT-Cathode-Ray-Tube"><a href="#（2）阴极射线管-CRT-Cathode-Ray-Tube" class="headerlink" title="（2）阴极射线管(CRT, Cathode-Ray Tube)"></a>（2）阴极射线管(CRT, Cathode-Ray Tube)</h2><h3 id="1-组成"><a href="#1-组成" class="headerlink" title="1. 组成"></a>1. 组成</h3><ol>
+<li><p>电子枪：电子枪由电灯丝，阴极和控制栅组成。电流通过灯丝产生热量，对阴极加热使其发射出电子束</p>
+</li>
+<li><p>聚焦系统：聚焦系统是一个电透镜，能使众多的电子聚集于一点</p>
+</li>
+<li><p>加速系统：加速阳极使电子达到轰击激发荧光屏应有的速度</p>
+</li>
+<li><p>磁偏转系统：偏转系统是使用静电场或磁场控制电子束产生偏转，最大偏转角是衡量系统性能的最重要的指标，显示器长短与此有关CRT显示器屏幕越大整个显象管就越长）</p>
+</li>
+<li><p>荧光屏：荧光屏是最终显示图形的部件</p>
+</li>
+</ol>
+<p><img src="/.io//%E5%A4%A7%E4%B8%89/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/pdf/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%EF%BC%9A%EF%BC%88%E4%B8%80%EF%BC%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E6%A6%82%E8%BF%B0/CRT.png" alt="CRT显示器的简易结构图"></p>
+<h3 id="2-工作原理"><a href="#2-工作原理" class="headerlink" title="2.工作原理"></a>2.工作原理</h3><ol>
+<li>高速的电子束由<strong>电子枪</strong>发出，经过<strong>聚焦系统</strong>、<strong>加速系统</strong>和<strong>磁偏转系统</strong>就会到达荧光屏的特定位置。电子束轰击到荧光屏的不同部位，被其内表面的荧光物质吸收，发光产生可见的图形</li>
+<li>荧光物质受电子束一次轰击之后发光，亮度会迅速衰减，所以要保持显示一幅稳定的画面，必须不断地发射电子束（不断刷新）</li>
+</ol>
+<hr>
+<h3 id="3-相关概念"><a href="#3-相关概念" class="headerlink" title="3. 相关概念"></a>3. 相关概念</h3><h4 id="1-刷新"><a href="#1-刷新" class="headerlink" title="[1] 刷新"></a>[1] 刷新</h4><p><strong>刷新频率：</strong>每秒钟重绘屏幕的次数。</p>
+<ol>
+<li><p><strong>刷新</strong>一次是指电子束从上到下扫描一次的过程</p>
+</li>
+<li><p>刷新频率高到一定值后，图象才能稳定显示</p>
+</li>
+<li><p>隔行扫描与逐行扫描</p>
+</li>
+<li><p>只有刷新频率高到一定值后，图象才能稳定显示。大约达到每秒60帧即<strong>60Hz</strong>时，人眼才能感觉到屏幕不闪烁，要使人眼觉得舒服，一般必须有<strong>85Hz</strong>以上的刷新频率。</p>
+</li>
+</ol>
+<h4 id="2-像素-Pixel"><a href="#2-像素-Pixel" class="headerlink" title="[2] 像素(Pixel)"></a>[2] 像素(Pixel)</h4><p>构成屏幕（图像）的最小元素</p>
+<h4 id="3-分辨率-Resolution"><a href="#3-分辨率-Resolution" class="headerlink" title="[3] 分辨率(Resolution)"></a>[3] 分辨率(Resolution)</h4><p>CRT在<strong>水平或竖直方向单位长度上能识别的最大像素个数</strong>，即水平和垂直方向上每厘米可绘制的点数.</p>
+<ol>
+<li><p>单位：通常为<strong>dpi</strong>（dots per inch)</p>
+</li>
+<li><p>在假定屏幕尺寸一定的情况下，也可用整个屏幕所能容纳的像素个数描述，如：640 * 480，800 * 600，1024 * 768, 1280 * 1024 等等</p>
+</li>
+<li><p>分辨率主要取决于CRT所用的<strong>荧光物质的类型</strong>、<strong>聚焦系统</strong>和<strong>偏转系统</strong></p>
+</li>
+</ol>
+<h2 id="（3）彩色阴极射线管"><a href="#（3）彩色阴极射线管" class="headerlink" title="（3）彩色阴极射线管"></a>（3）彩色阴极射线管</h2><p>通过将能发不同颜色的光的荧光物质进行组合而产生彩色</p>
+<h3 id="1-原理"><a href="#1-原理" class="headerlink" title="1. 原理"></a>1. 原理</h3><ol>
+<li><p>彩色CRT显示器的荧光屏上涂有三种荧光物质，它们分别能发红、绿、兰三种颜色的光。而电子枪也发出三束电子束来激发这三种物质，中间通过一个控制栅格（荫罩，又称影孔板）来决定三束电子到达的位置。</p>
+</li>
+<li><p>三束电子经过荫罩的选择，分别到达三个荧光点的位置。通过控制三个电子束的强弱就能控制屏幕上点的颜色。</p>
+</li>
+</ol>
+<h3 id="2-显示器能同时显示的颜色个数"><a href="#2-显示器能同时显示的颜色个数" class="headerlink" title="2. 显示器能同时显示的颜色个数"></a>2. 显示器能同时显示的颜色个数</h3><p>如果每支电子枪发出的电子束的强度有256个等级，则显示器能同时显示 256 * 256 * 256 = 16M 种颜色，称为<strong>真彩系统</strong>。</p>
+<h2 id="（4）随机扫描显示器"><a href="#（4）随机扫描显示器" class="headerlink" title="（4）随机扫描显示器"></a>（4）随机扫描显示器</h2><p>随机扫描显示器中，电子束可以在任意方向上自由移动，按照显示命令用画线的方式绘出图形，因此也称<strong>矢量显示器</strong>。</p>
+<h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h3><p>电子束随意移动，只扫描荧屏上要显示的部分。</p>
+<h3 id="2-工作原理-1"><a href="#2-工作原理-1" class="headerlink" title="2. 工作原理"></a>2. 工作原理</h3><ol>
+<li>应用程序输入并与图形软件一起存放在系统内存中</li>
+<li>应用程序的图形命令由图形软件包翻译成显示文件并存入刷新存储器  (显示缓存）</li>
+<li>由显示处理器访问这个显示文件以刷新屏幕</li>
+<li>在每个刷新周期内，显示处理器遍历一次显示文件程序中的每条命令</li>
+</ol>
+<h2 id="（5）光栅扫描显示器"><a href="#（5）光栅扫描显示器" class="headerlink" title="（5）光栅扫描显示器"></a>（5）光栅扫描显示器</h2><h3 id="1-相关概念"><a href="#1-相关概念" class="headerlink" title="1.相关概念"></a>1.相关概念</h3><h4 id="1-扫描线（Scan-Line）"><a href="#1-扫描线（Scan-Line）" class="headerlink" title="[1] 扫描线（Scan Line）"></a>[1] 扫描线（Scan Line）</h4><p>电子束先从荧光屏的左上角开始，向右扫描一条水平线</p>
+<h4 id="2-帧（Frame）"><a href="#2-帧（Frame）" class="headerlink" title="[2] 帧（Frame）"></a>[2] 帧（Frame）</h4><p>一次扫描所产生的图像称为一帧</p>
+<h4 id="3-水平回扫期-horizontal-retrace"><a href="#3-水平回扫期-horizontal-retrace" class="headerlink" title="[3] 水平回扫期 (horizontal retrace)"></a>[3] 水平回扫期 (horizontal retrace)</h4><p>电子束在扫描线之间的回扫期</p>
+<h4 id="4-垂直回扫期-Vertical-retrace"><a href="#4-垂直回扫期-Vertical-retrace" class="headerlink" title="[4] 垂直回扫期 (Vertical retrace)"></a>[4] 垂直回扫期 (Vertical retrace)</h4><p>在帧之间的回扫期</p>
+<h3 id="2-绘图过程"><a href="#2-绘图过程" class="headerlink" title="2. 绘图过程"></a>2. 绘图过程</h3><p>对光栅扫描显示器来说，当电子束扫描到该显示图形的点时，其强度发生变化，使该位置的亮度与背景亮度不同，这样便能够显示出要绘制的图形</p>
+<h3 id="3-显示器的分辨率"><a href="#3-显示器的分辨率" class="headerlink" title="3. 显示器的分辨率"></a>3. 显示器的分辨率</h3><p>电子束按固定的扫描顺序进行扫描N条扫描线，每条扫描线有M个像素，显示器的分辨率则为M * N</p>
+<h2 id="（6）光栅图形显示系统"><a href="#（6）光栅图形显示系统" class="headerlink" title="（6）光栅图形显示系统"></a>（6）光栅图形显示系统</h2><h3 id="1-组成-1"><a href="#1-组成-1" class="headerlink" title="1. 组成"></a>1. 组成</h3><ol>
+<li>显示处理器（Display Processor）</li>
+</ol>
+<p>其主要任务是将应用程序定义为一组像素强度值,存放在帧缓冲存储器（扫描转换），同时也能执行某些附加的操作几何变换、裁剪、纹理映射等等。</p>
+<ol start="2">
+<li>帧缓冲存储器（Frame Buffer）</li>
+</ol>
+<p>简称帧缓冲器，俗称<strong>显存</strong>，保存了对应屏幕所有点的亮度值。</p>
+<ol start="3">
+<li>视频控制器（Video Controller）</li>
+</ol>
+<p>建立帧缓存与屏幕像素之间的一一对应，负责刷新。</p>
+<ol start="4">
+<li>CRT</li>
+</ol>
+<h3 id="2-优点"><a href="#2-优点" class="headerlink" title="2. 优点"></a>2. 优点</h3><ol>
+<li>成本低</li>
+<li>易于绘制填充图形</li>
+<li>色彩丰富</li>
+<li>刷新频率一定，与图形的复杂程度无关</li>
+<li>易于修改图形</li>
+</ol>
+<h3 id="3-缺点"><a href="#3-缺点" class="headerlink" title="3. 缺点"></a>3. 缺点</h3><ol>
+<li>需要扫描转换</li>
+<li>会产生走样</li>
+</ol>
+<h2 id="（7）单色显示系统"><a href="#（7）单色显示系统" class="headerlink" title="（7）单色显示系统"></a>（7）单色显示系统</h2><ol>
+<li><strong>帧缓存中单元数目</strong>与<strong>显示器上像素的数目</strong>相同，单元与像素一一对应。各单元的数值决定了其对应像素的颜色。</li>
+<li>显示颜色的种类与帧缓存中每个单元的位数有关（图示帧缓冲器的每个单元只有一位）。</li>
+</ol>
+<h2 id="（8）显存相关的问题"><a href="#（8）显存相关的问题" class="headerlink" title="（8）显存相关的问题"></a>（8）显存相关的问题</h2><h3 id="1-帧缓存与显示器分辨率的关系"><a href="#1-帧缓存与显示器分辨率的关系" class="headerlink" title="1. 帧缓存与显示器分辨率的关系"></a>1. <strong>帧缓存与显示器分辨率的关系</strong></h3><p>帧缓存的大小 = 显示器分辨率的大小 * 帧缓存的位平面数 / 8</p>
+<h3 id="2-高分辨率和真彩要求有大的显存"><a href="#2-高分辨率和真彩要求有大的显存" class="headerlink" title="2. 高分辨率和真彩要求有大的显存"></a>2. 高分辨率和真彩要求有大的显存</h3><h4 id="1-采用查色表（Lookup-Table）机制"><a href="#1-采用查色表（Lookup-Table）机制" class="headerlink" title="[1]采用查色表（Lookup Table）机制"></a>[1]采用查色表（Lookup Table）机制</h4><p>又称彩色表（Color Table）机制</p>
+<hr>
+<p>查色表：查色表是一维线性表，其每一项的内容对应一种颜色，它的长度由帧缓存单元的位数决定，例如：每单元有8位，则查色表的长度为 2 ^ 8＝256</p>
+<hr>
+<p>目的：在帧缓存单元的位数不增加的情况下，具有大范围内挑选颜色的能力。帧缓冲器各单元保存的不是相应像素的颜色值，而是查色表各项的<strong>索引值</strong>，按照这个索引值在彩色表中取出红、绿、蓝三种颜色的分量，然后送CRT显示器对该象素进行颜色显示。 </p>
+<h4 id="2-采用隔行扫描的方法"><a href="#2-采用隔行扫描的方法" class="headerlink" title="[2]采用隔行扫描的方法"></a>[2]采用隔行扫描的方法</h4><p>隔行扫描：把一帧分两场，即<strong>奇数场</strong>与<strong>偶数场</strong></p>
+<p>一场 1/60s，场频 60HZ，帧频 30HZ</p>
+<p><strong>第一趟</strong>：电子束从顶到底，一行隔一行地扫描。</p>
+<p><strong>第二趟</strong>：垂直回扫后，电子束则再扫描另一半扫描线。 </p>
+<p>以这种方式的隔行扫描使在<strong>逐行扫描所需时间的一半</strong>时就能看就能看到整个屏幕显示。</p>
+<p>画面更新频率仍为60HZ，<strong>降低了闪烁效应</strong>，每一场1/60秒内，帧缓存中数据量比逐行扫描少一半。降低了视频控制器存取帧缓存的速度及传输带宽的要求。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="">FlowerMushroom&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="">この世界私は大好きです</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
