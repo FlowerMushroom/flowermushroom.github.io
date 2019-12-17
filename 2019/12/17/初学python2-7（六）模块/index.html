@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FlowerMushroom的博客">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        初学python2.7（六）模块 - FlowerMushroom的博客 | FlowerMushroom&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/images/head.jpg" />
+        </div>
+        <div class="name">
+            <i>FlowerMushroom</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#模块Module"><span class="toc-text">模块Module</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-更多有关模块的信息"><span class="toc-text">6.1 更多有关模块的信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-1-以脚本方式执行模块"><span class="toc-text">6.1.1 以脚本方式执行模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-2-模块搜索路径"><span class="toc-text">6.1.2 模块搜索路径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-标准模块Standard-Module"><span class="toc-text">6.2 标准模块Standard Module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-dir-函数"><span class="toc-text">6.3 dir()函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-包Package"><span class="toc-text">6.4 包Package</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-1-从包中导入"><span class="toc-text">6.4.1 从包中导入 *</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-2-包内引用Intra-package-References"><span class="toc-text">6.4.2 包内引用Intra-package References</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-3-多个目录Multiple-Directories中的包"><span class="toc-text">6.4.3 多个目录Multiple Directories中的包</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        初学python2.7（六）模块
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-12-17 14:12:30</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="模块Module"><a href="#模块Module" class="headerlink" title="模块Module"></a>模块Module</h1><blockquote>
+<p>Lean from <a href="https://docs.python.org/2.7/tutorial/modules.html" target="_blank" rel="noopener">python2.7 official documentation</a></p>
+</blockquote>
+<p>使用文本编辑器编写文件，并将其作为解释器（interpreter）的输入，这样的文件叫做脚本（script）。随着程序越来越长，将脚本拆分成几个文件更利于维护，为此，Python提供将定义写入一个文件中，并在脚本或者解释器中使用它们的方法，这样的文件称作模块（module）。</p>
+<p>模块是一个包含Python定义和语句的文件，文件名为模块名加后缀<code>.py</code>。</p>
+<p>模块名（作为一个字符串）可以通过全局变量<code>__name__</code>来获得。</p>
+<h2 id="6-1-更多有关模块的信息"><a href="#6-1-更多有关模块的信息" class="headerlink" title="6.1 更多有关模块的信息"></a>6.1 更多有关模块的信息</h2><p>模块包含的语句以及函数定义，用于模块的初始化，仅在模块第一次在import语句中被导入时才执行。(当文件被当作脚本运行时，它们也会执行。)</p>
+<p>每个模块都有自己的私有符号表（private symbol table），作为模块中定义的所有函数的全局符号表。模块的作者可以在模块内使用全局变量（global variables），而不必担心与用户的全局变量冲突。</p>
+<p>习惯上把所有导入模块的<code>import</code>语句放在脚本或模块的开头，被导入的模块名存放在全局符号表中。</p>
+<p><code>import</code>语句有一个变体，它可以把模块符号表中存在的<code>name</code>直接导入到脚本或模块中，而不会把被调模块名引入当前的符号表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fibo <span class="keyword">import</span> fib</span><br><span class="line">fib(<span class="number">500</span>)</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>*</code>可以导入模块内定义的，除了以下划线<code>_</code>开头的所有<code>name</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fibo <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>as</code>可以为引入的模块或模块内名称添加昵称：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fibo <span class="keyword">as</span> fb</span><br><span class="line">fb.fib(<span class="number">500</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> fibo <span class="keyword">import</span> fib <span class="keyword">as</span> fb</span><br><span class="line">fb(<span class="number">500</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-1-1-以脚本方式执行模块"><a href="#6-1-1-以脚本方式执行模块" class="headerlink" title="6.1.1 以脚本方式执行模块"></a>6.1.1 以脚本方式执行模块</h3><p>使用<code>python</code>命令运行<code>.py</code>模块时，模块里的代码会被执行，且<code>__name__</code>会被赋值为<code>&quot;__main__&quot;</code>。</p>
+<p>通过手动在模块末尾添加：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">import</span> sys</span><br><span class="line">    fib(int(sys.argv[<span class="number">1</span>]))</span><br></pre></td></tr></table></figure>
+
+<p>可以既把这个文件当作脚本又把它当作一个可调入的模块来使用，这段解析命令行（详见<a href="https://docs.python.org/zh-cn/2.7/library/sys.html" target="_blank" rel="noopener">sys.argv</a>）的代码只有在当模块是以“main”文件的方式执行的时候才会运行，如果模块是被导入的，这段代码是不运行的。这种方法多用于以脚本的方式运行模块从而执行一些测试套件。</p>
+<h3 id="6-1-2-模块搜索路径"><a href="#6-1-2-模块搜索路径" class="headerlink" title="6.1.2 模块搜索路径"></a>6.1.2 模块搜索路径</h3><p>当一个名为 <code>spam</code> 的模块被导入的时候，解释器首先寻找具有该名称的内置模块（built-in module）。如果没有找到，解释器将从 <a href="https://docs.python.org/zh-cn/2.7/library/sys.html#sys.path" target="_blank" rel="noopener"><code>sys.path</code></a> 变量给出的目录列表里寻找名为 <code>spam.py</code> 的文件。<code>sys.path</code>初始有这些目录地址：</p>
+<ul>
+<li>包含输入脚本（input script）的目录或当前的目录；</li>
+<li><code>PYTHONPATH</code>：一个由目录名组成的列表，目录名的语法与shell中的<code>PATH</code>变量相同；</li>
+<li>与安装相关的（installation-dependent）系统默认值。</li>
+</ul>
+<p>包含正在运行脚本的文件目录被放在搜索路径<code>sys.path</code>的开头处， 在标准库路径之前。这意味着将加载此目录里的脚本，而不是标准库中的同名模块。 </p>
+<h2 id="6-2-标准模块Standard-Module"><a href="#6-2-标准模块Standard-Module" class="headerlink" title="6.2 标准模块Standard Module"></a>6.2 标准模块Standard Module</h2><p>Python附带了一个标准模块库（library of standard modules），这些模块内置于解释其中，它们提供对那些不属于语言的核心（the core of the language）但仍然内置的（built in）操作的访问以提高效率，或提供对系统调用（system calls）等操作系统原语（operating system primitives）的访问。</p>
+<p>其中值得注意的模块<code>sys</code>，它被内嵌到每一个Python解释器（无论在哪一种操作系统）。</p>
+<p>使用标准列表操作（standard list operations）可以对<code>sys.path</code>进行修改：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">'/ufs/guido/lib/python'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-3-dir-函数"><a href="#6-3-dir-函数" class="headerlink" title="6.3 dir()函数"></a>6.3 dir()函数</h2><p>内置函数 <code>dir([object])</code>用于查找已被定义名称的列表，返回的列表按字母表排序。</p>
+<p>如果没有实参，<code>dir()</code>返回当前本地作用域中的名称列表；</p>
+<p>如果有实参， <code>dir(object)</code>返回object对象包含的有效属性列表。</p>
+<p>注意：列表中包含所有类型的名称：变量，模块，函数，等等。</p>
+<p>如果要获取内置函数和变量的名称，可以使用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> __builtin__</span><br><span class="line"><span class="keyword">print</span> dir(__builtin__)</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-4-包Package"><a href="#6-4-包Package" class="headerlink" title="6.4 包Package"></a>6.4 包Package</h2><p>包是一个分层次的文件目录结构，它定义了一个由模块及子模块，和子模块下的子模块等组成的Python的应用环境。</p>
+<p>简单来说，包就是文件夹，但该文件夹下必须存在<code>__init__.py</code>文件, 该文件的内容可以为空。<code>__init__.py</code>用于标识当前文件夹是一个包。</p>
+<p>考虑以下目录结构：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">sound/                          Top-level package</span><br><span class="line">      __init__<span class="selector-class">.py</span>               Initialize the sound package</span><br><span class="line">      formats/                  Subpackage <span class="keyword">for</span> file format conversions</span><br><span class="line">              __init__.py</span><br><span class="line">              wavread.py</span><br><span class="line">              ...</span><br><span class="line">      effects/                  Subpackage <span class="keyword">for</span> sound effects</span><br><span class="line">              __init__.py</span><br><span class="line">              echo.py</span><br><span class="line">              surround.py</span><br><span class="line">              reverse.py</span><br><span class="line">              ...</span><br><span class="line">      filters/                  Subpackage <span class="keyword">for</span> filters</span><br><span class="line">              __init__.py</span><br><span class="line">              equalizer.py</span><br><span class="line">              ...</span><br></pre></td></tr></table></figure>
+
+<p>包的用户可以从包中导入单个模块，</p>
+<p>使用下面的语句加载子模块文件<code>/sound/effects/echo.py</code>，引用时必须使用全名<code>sound.effects.echo</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sound.effects.echo</span><br><span class="line">sound.effects.echo.echofilter(input, output, delay=<span class="number">0.7</span>, atten=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<p>使用另一种方法导入子模块<code>echo</code>，可以在没有包前缀的情况下使用它：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sound.effects <span class="keyword">import</span> echo</span><br><span class="line">echo.echofilter(input, output, delay=<span class="number">0.7</span>, atten=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<p>同样，可以使用<code>from package import item</code>语句，直接从子模块中导入函数，类或变量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sound.effects.echo <span class="keyword">import</span> echofilter</span><br><span class="line">echofilter(input, output, delay=<span class="number">0.7</span>, atten=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-4-1-从包中导入"><a href="#6-4-1-从包中导入" class="headerlink" title="6.4.1 从包中导入 *"></a>6.4.1 从包中导入 *</h3><p>如果一个包的<code>__init__.py</code>文件中，定义了一个名为<code>__all__</code>的列表，它会被视为在遇到<code>from package import *</code>语句时应该导入的模块名列表。</p>
+<p>在发布该包的新版本时，包作者可以决定是否让此列表保持更新。包作者如果认为从他们的包中导入 * 的操作没有必要被使用，也可以决定不支持此列表。</p>
+<p>以前文中的目录结构为例，<code>/sound/effects/__init__.py</code>文件可以包含如下的列表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__all__ = [<span class="string">"echo"</span>, <span class="string">"surround"</span>, <span class="string">"reverse"</span>]</span><br></pre></td></tr></table></figure>
+
+<p>这样，在使用<code>from sound.effects import *</code>语句时，将导入列表中的三个子模块。</p>
+<h3 id="6-4-2-包内引用Intra-package-References"><a href="#6-4-2-包内引用Intra-package-References" class="headerlink" title="6.4.2 包内引用Intra-package References"></a>6.4.2 包内引用Intra-package References</h3><p>当包内的模块想要引用本包内的其他模块时，可以使用绝对引用（absolute imports）和相对引用（relative imports）。</p>
+<p>以前文中目录结构为例，如果<code>sound.filters.equalizer</code>想要使用<code>sound.effects.echo</code>模块，可以使用绝对引用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sound.effects <span class="keyword">import</span> echo</span><br></pre></td></tr></table></figure>
+
+<p>如果<code>sound.effects.surround</code>想要使用包内引用，可以进行下面的相对引用：</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#引用整个sound.formats子包</span><br><span class="line"><span class="keyword">from</span> .. <span class="keyword">import</span> formats</span><br><span class="line"></span><br><span class="line">#引用同目录下的模块echo.py</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> echo</span><br><span class="line"></span><br><span class="line">#引用兄弟包的子模块（submodules <span class="keyword">of</span> siblings packages）</span><br><span class="line"><span class="keyword">from</span> ..filters <span class="keyword">import</span> equalizer</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-4-3-多个目录Multiple-Directories中的包"><a href="#6-4-3-多个目录Multiple-Directories中的包" class="headerlink" title="6.4.3 多个目录Multiple Directories中的包"></a>6.4.3 多个目录Multiple Directories中的包</h3><p>包支持另一个特殊属性，<code>__path__</code>。它被初始化为一个列表，其中包含在执行该文件中的代码之前，保存包文件<code>__init__.py</code>的目录名称。</p>
+<p>这个变量可以修改；这样做会影响将来对包中包含的模块和子包的搜索。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="">FlowerMushroom&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="">この世界私は大好きです</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
