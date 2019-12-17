@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FlowerMushroom的博客">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        初学python2.7（七）输入输出 - FlowerMushroom的博客 | FlowerMushroom&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/images/head.jpg" />
+        </div>
+        <div class="name">
+            <i>FlowerMushroom</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#输入输出"><span class="toc-text">输入输出</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-更漂亮的输出格式Output-Formatting"><span class="toc-text">7.1 更漂亮的输出格式Output Formatting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-1-字符串转化"><span class="toc-text">7.1.1 字符串转化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-2-字符串对齐"><span class="toc-text">7.1.2 字符串对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-3-字符串格式化"><span class="toc-text">7.1.3 字符串格式化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-4-旧的格式化字符串的方法"><span class="toc-text">7.1.4 旧的格式化字符串的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-读写文件"><span class="toc-text">7.2 读写文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-1-open-filename-mode-函数"><span class="toc-text">7.2.1 open(filename, mode)函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-1-File对象的方法"><span class="toc-text">7.2.1 File对象的方法</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        初学python2.7（七）输入输出
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-12-17 16:24:30</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><blockquote>
+<p>Learn from <a href="https://docs.python.org/2.7/tutorial/inputoutput.html" target="_blank" rel="noopener">python2.7 official documentation</a></p>
+<p>参考：<a href="https://www.runoob.com/python/file-methods.html" target="_blank" rel="noopener">菜鸟教程Python File方法</a></p>
+</blockquote>
+<p>数据可以以人类可读的形式打印出来，或者写入文件以供将来使用。</p>
+<h2 id="7-1-更漂亮的输出格式Output-Formatting"><a href="#7-1-更漂亮的输出格式Output-Formatting" class="headerlink" title="7.1 更漂亮的输出格式Output Formatting"></a>7.1 更漂亮的输出格式Output Formatting</h2><h3 id="7-1-1-字符串转化"><a href="#7-1-1-字符串转化" class="headerlink" title="7.1.1 字符串转化"></a>7.1.1 字符串转化</h3><p>Python提供了两种内置函数，可以将任意值转化为字符串：<code>repr()</code>和<code>str()</code>。</p>
+<p><code>repr()</code>函数将对象转化为供解释器读取的字符串形式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'This is a string'</span></span><br><span class="line"><span class="keyword">print</span> repr(s)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'This is a string'</span></span><br></pre></td></tr></table></figure>
+
+<p><code>str()</code>函数将对象转化为适于人阅读的字符串形式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'This is a string'</span></span><br><span class="line"><span class="keyword">print</span> str(s)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>This <span class="keyword">is</span> a string</span><br></pre></td></tr></table></figure>
+
+<p>对于没有特定供人阅读表述的对象，<code>repr()</code>和<code>str()</code>将返回相同的值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">3.1415</span></span><br><span class="line"><span class="keyword">print</span> repr(n)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3.1415</span></span><br><span class="line"><span class="keyword">print</span> str(n)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3.1415</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-1-2-字符串对齐"><a href="#7-1-2-字符串对齐" class="headerlink" title="7.1.2 字符串对齐"></a>7.1.2 字符串对齐</h3><p><code>str.rjust()</code>方法可以在字符串左侧填充空格来在给定宽度的字段中右对齐字符串：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">6</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> repr(x).rjust(<span class="number">2</span>), repr(x*x).rjust(<span class="number">3</span>),</span><br><span class="line"><span class="meta">... </span>    <span class="comment"># Note trailing comma on previous line</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">print</span> repr(x*x*x).rjust(<span class="number">4</span>)</span><br><span class="line">...</span><br><span class="line"> <span class="number">1</span>   <span class="number">1</span>    <span class="number">1</span></span><br><span class="line"> <span class="number">2</span>   <span class="number">4</span>    <span class="number">8</span></span><br><span class="line"> <span class="number">3</span>   <span class="number">9</span>   <span class="number">27</span></span><br><span class="line"> <span class="number">4</span>  <span class="number">16</span>   <span class="number">64</span></span><br><span class="line"> <span class="number">5</span>  <span class="number">25</span>  <span class="number">125</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：如果输入字符串太长，<code>str.rjust()</code>方法不会截断它，而会返回原字符串。如果想阶段超过长度的字符串，可以添加slice操作：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x.rjust(n)[:n]</span><br></pre></td></tr></table></figure>
+
+<p>类似的方法还有：左对齐<code>str.ljust()</code>和中对齐<code>str.center()</code>。</p>
+<p><code>str.zfill(n)</code>方法将字符串最左侧的数字字符串用零填充至整个字符串长度为<code>n</code>，而不改变数字大小，且可识别正负号：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">'-3.14 this is pi'</span>.zfill(<span class="number">20</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">-00003.14</span> this <span class="keyword">is</span> pi</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-1-3-字符串格式化"><a href="#7-1-3-字符串格式化" class="headerlink" title="7.1.3 字符串格式化"></a>7.1.3 字符串格式化</h3><p>通常，程序员需要自定义输出格式来取代以空格分隔的值，有两种格式化输出格式的方法：</p>
+<ul>
+<li>使用字符串分割（slicing）和连接（concatenation）操作手动处理所有字符串；</li>
+<li>使用<code>str.format()</code>方法。</li>
+</ul>
+<p><code>str.format()</code>格式化字符串用法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">2</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'&#123;0:2d&#125; &#123;1:3d&#125; &#123;2:4d&#125;'</span>.format(x, x * x, x * x * x)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span> <span class="number">2</span>   <span class="number">4</span>    <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>花括号及其中的参数称为格式字段（format fields），其将被替换为传递给<code>str.format()</code>方法的对象，方括号中<code>&#39;:&#39;</code>前的数字表示传递给<code>str.format()</code>方法对象的位置，方括号中<code>&#39;:&#39;</code>后的字段是一个可选的格式说明符，用来更好地控制值的格式。</p>
+<p>如果在<code>str.format()</code>方法中使用了关键字参数，则可以使用参数名称来引用其值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">'This &#123;food&#125; is &#123;adjective&#125;.'</span>.format(food=<span class="string">'spam'</span>, adjective=<span class="string">'absolutely horrible'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>This spam <span class="keyword">is</span> absolutely horrible.</span><br></pre></td></tr></table></figure>
+
+<p><code>&#39;!s&#39;</code>和<code>&#39;!r</code>可在花括号中，用来在格式化之前将<code>str.format()</code>方法对象的值转化为指定类型的（<code>str()</code>或<code>repr()</code>）字符串：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">'The value of PI is approximately &#123;!r&#125;.'</span>.format(math.pi)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>The value of PI <span class="keyword">is</span> approximately <span class="number">3.141592653589793</span>.</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">'The value of PI is approximately &#123;!s&#125;.'</span>.format(math.pi)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>The value of PI <span class="keyword">is</span> approximately <span class="number">3.14159265359</span>.</span><br></pre></td></tr></table></figure>
+
+<p>可以使用<code>&quot;**&quot;</code>符号传递参数来解析字典：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">table = &#123;<span class="string">'Sjoerd'</span>: <span class="number">4127</span>, <span class="string">'Jack'</span>: <span class="number">4098</span>, <span class="string">'Dcab'</span>: <span class="number">8637678</span>&#125;</span><br><span class="line"><span class="keyword">print</span> <span class="string">'Jack: &#123;Jack:d&#125;; Sjoerd: &#123;Sjoerd:d&#125;; Dcab: &#123;Dcab:d&#125;'</span>.format(**table)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Jack: <span class="number">4098</span>; Sjoerd: <span class="number">4127</span>; Dcab: <span class="number">8637678</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-1-4-旧的格式化字符串的方法"><a href="#7-1-4-旧的格式化字符串的方法" class="headerlink" title="7.1.4 旧的格式化字符串的方法"></a>7.1.4 旧的格式化字符串的方法</h3><p><code>%</code> 操作符也可以用作字符串格式化，它将右边的参数格式化并替换入原字符串含有<code>%</code>格式的位置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">'The value of PI is approximately %5.3f.'</span> % math.pi</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>The value of PI <span class="keyword">is</span> approximately <span class="number">3.142</span>.</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-2-读写文件"><a href="#7-2-读写文件" class="headerlink" title="7.2 读写文件"></a>7.2 读写文件</h2><h3 id="7-2-1-open-filename-mode-函数"><a href="#7-2-1-open-filename-mode-函数" class="headerlink" title="7.2.1 open(filename, mode)函数"></a>7.2.1 <code>open(filename, mode)</code>函数</h3><p><code>open(filename, mode)</code>返回一个文件<code>File</code>对象，第一个参数是包含文件名的文件路径字符串，第二个参数是文件打开模式，包括：</p>
+<table>
+<thead>
+<tr>
+<th align="left">模式</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>t</code></td>
+<td align="left">文本模式 (默认)。</td>
+</tr>
+<tr>
+<td align="left"><code>x</code></td>
+<td align="left">写模式，新建一个文件，如果该文件已存在则会报错。</td>
+</tr>
+<tr>
+<td align="left"><code>b</code></td>
+<td align="left">二进制模式。</td>
+</tr>
+<tr>
+<td align="left"><code>+</code></td>
+<td align="left">打开一个文件进行更新(可读可写)。</td>
+</tr>
+<tr>
+<td align="left"><code>U</code></td>
+<td align="left">通用换行模式（不推荐）。</td>
+</tr>
+<tr>
+<td align="left"><code>r</code></td>
+<td align="left">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td align="left"><code>rb</code></td>
+<td align="left">以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td align="left"><code>r+</code></td>
+<td align="left">打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td align="left"><code>rb+</code></td>
+<td align="left">以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td align="left"><code>w</code></td>
+<td align="left">打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td align="left"><code>wb</code></td>
+<td align="left">以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td align="left"><code>w+</code></td>
+<td align="left">打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td align="left"><code>wb+</code></td>
+<td align="left">以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td align="left"><code>a</code></td>
+<td align="left">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td align="left"><code>ab</code></td>
+<td align="left">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td align="left"><code>a+</code></td>
+<td align="left">打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td align="left"><code>ab+</code></td>
+<td align="left">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody></table>
+<h3 id="7-2-1-File对象的方法"><a href="#7-2-1-File对象的方法" class="headerlink" title="7.2.1 File对象的方法"></a>7.2.1 File对象的方法</h3><p>下表列出了<code>File</code>对象常用的函数：</p>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法及描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="https://www.runoob.com/python/file-close.html" target="_blank" rel="noopener">file.close()</a></td>
+<td align="left">关闭文件。关闭后文件不能再进行读写操作。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-flush.html" target="_blank" rel="noopener">file.flush()</a></td>
+<td align="left">刷新文件内部缓冲，直接把内部缓冲区的数据立刻写入文件, 而不是被动的等待输出缓冲区写入。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-fileno.html" target="_blank" rel="noopener">file.fileno()</a></td>
+<td align="left">返回一个整型的文件描述符(file descriptor FD 整型), 可以用在如<code>os</code>模块的<code>read</code>方法等一些底层操作上。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-isatty.html" target="_blank" rel="noopener">file.isatty()</a></td>
+<td align="left">如果文件连接到一个终端设备返回<code>True</code>，否则返回<code>False</code>。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-next.html" target="_blank" rel="noopener">file.next()</a></td>
+<td align="left">返回文件下一行。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/python-file-read.html" target="_blank" rel="noopener">file.read([size])</a></td>
+<td align="left">从文件读取指定的字节数，如果未给定或为负则读取所有。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-readline.html" target="_blank" rel="noopener">file.readline([size])</a></td>
+<td align="left">读取整行，包括 <code>&quot;\n&quot;</code> 字符。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-readlines.html" target="_blank" rel="noopener">file.readlines([sizeint])</a></td>
+<td align="left">读取所有行并返回列表，若给定<code>sizeint&gt;0</code>，则是设置一次读多少字节，这是为了减轻读取压力。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-seek.html" target="_blank" rel="noopener">file.seek(offset[, whence])</a></td>
+<td align="left">设置文件当前位置</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-tell.html" target="_blank" rel="noopener">file.tell()</a></td>
+<td align="left">返回文件当前位置。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-truncate.html" target="_blank" rel="noopener">file.truncate([size])</a></td>
+<td align="left">截取文件，截取的字节通过<code>size</code>指定，默认为当前文件位置。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/python-file-write.html" target="_blank" rel="noopener">file.write(str)</a></td>
+<td align="left">将字符串写入文件，返回的是写入的字符长度。</td>
+</tr>
+<tr>
+<td align="left"><a href="https://www.runoob.com/python/file-writelines.html" target="_blank" rel="noopener">file.writelines(sequence)</a></td>
+<td align="left">向文件写入一个序列字符串列表，如果需要换行则要自己加入每行的换行符。</td>
+</tr>
+</tbody></table>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="">FlowerMushroom&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="">この世界私は大好きです</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
