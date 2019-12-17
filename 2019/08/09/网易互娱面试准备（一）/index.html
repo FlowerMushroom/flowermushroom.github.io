@@ -11,7 +11,7 @@
 
     <title>
         
-        FlowerMushroom的博客 | FlowerMushroom&#39;s Blog
+        网易互娱面试准备（一） - FlowerMushroom的博客 | FlowerMushroom&#39;s Blog
         
     </title>
 
@@ -65,7 +65,7 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/archive">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
@@ -87,6 +87,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-多态，多态的实现，派生类虚表的布局是怎样的"><span class="toc-text">1. 多态，多态的实现，派生类虚表的布局是怎样的</span></a></li></ol>
+</div>
     
 </div>
 
@@ -114,105 +118,52 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        网易互娱面试准备（一）
+    </div>
 
-<div class="archives-container">
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-08-09 08:56:27</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>搜集网络上各类面试题，并记录答案（非标准答案）。</p>
+<h1 id="1-多态，多态的实现，派生类虚表的布局是怎样的"><a href="#1-多态，多态的实现，派生类虚表的布局是怎样的" class="headerlink" title="1. 多态，多态的实现，派生类虚表的布局是怎样的"></a>1. 多态，多态的实现，派生类虚表的布局是怎样的</h1><p>在面向对象语言中，接口的多种不同的实现方式即为多态。</p>
+<p>C++中，实现多态有以下方法：虚函数，抽象类，覆盖，模板（重载和多态无关）。</p>
+<p>基类：父类；派生类：子类。</p>
+<hr>
+<p>实现多态三点：<br>1.必须最少两个类，而且必须是继承<br>2.必须函数是虚函数（同名，同参，同返回类型）<br>3.通过基类的指针或引用来实现</p>
+<hr>
+<p>一个类里边无论有多少个虚函数，虚表指针 __vfptr 只会有一个，占四个字节</p>
+<p>虚表中有两部分内容：1、虚函数的地址；2、虚函数</p>
+<p>虚函数的地址总是以0x00000000作为结束</p>
+<hr>
+<p>下面从4种情况对虚表进行详细的理解：</p>
+<p>1、在单继承没有覆盖的情况下，子类的虚表会紧跟父类的虚表（虚函数按照声明顺序放于表中）。</p>
+<p>2、在单继承有覆盖的情况下，覆盖的子类会替代原先父类虚表的位置，其余的子类虚表会紧跟父类。</p>
+<p>3、在多继承没有覆盖的情况下，子类的虚表会紧跟<strong>第一个父类</strong>的虚表，其他的父类虚表中不会出现子类的虚表。</p>
+<p>4、在多继承有覆盖的情况下，覆盖的子类会替代<strong>所有父类同名虚函数</strong>在虚表中的位置，其余的子类虚表会紧跟<strong>第一个父类</strong>的虚表。</p>
+<hr>
+<p>基类的指针和引用调动派生类的虚函数，并不是访问的是派生类的虚函数，而是访问基类中被派生类覆盖的虚函数。</p>
+<p>所以访问的位置还是在基类中，并没有进入派生类，这也是多态的实质。</p>
+<hr>
+<p>参考：<a href="https://blog.csdn.net/zxx2096/article/details/80056705" target="_blank" rel="noopener">多态的实现原理分析—-虚表</a></p>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-                    <span class="tag-text">2019</span>
-                </span>
-    <ul>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>12-17</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/12/17/初学pytho2-7（五）数据结构/">
-                        <span>
-                            初学pytho2.7（五）数据结构
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>08-09</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/08/09/网易互娱面试准备（一）/">
-                        <span>
-                            网易互娱面试准备（一）
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>07-27</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/07/27/PHP学习笔记（一）/">
-                        <span>
-                            PHP学习笔记（一）
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>06-12</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/06/12/软件架构与设计模式学习笔记/">
-                        <span>
-                            软件架构与设计模式学习笔记
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
 
-    </ul>
-</div>
+        <div id="lv-container">
+        </div>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>12-16</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/12/16/计算机图形学学习笔记（一）：计算机图形学概述/">
-                        <span>
-                            计算机图形学学习笔记（一）：计算机图形学概述
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-
-    </ul>
-</div>
-
+    </div>
 </div>
 
     </div>
@@ -264,7 +215,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
