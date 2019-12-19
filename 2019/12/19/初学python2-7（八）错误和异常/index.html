@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FlowerMushroom的博客">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        初学python2.7（八）错误和异常 - FlowerMushroom的博客 | FlowerMushroom&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/images/head.jpg" />
+        </div>
+        <div class="name">
+            <i>FlowerMushroom</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#错误和异常"><span class="toc-text">错误和异常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-语法错误Syntax-Error"><span class="toc-text">8.1 语法错误Syntax Error</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2-异常Exception"><span class="toc-text">8.2 异常Exception</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3-处理Handling异常"><span class="toc-text">8.3 处理Handling异常</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-1-try语句"><span class="toc-text">8.3.1 try语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-2-except子句"><span class="toc-text">8.3.2 except子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-3-else子句"><span class="toc-text">8.3.3 else子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-4-finally子句：定义清理操作Clean-up-Action"><span class="toc-text">8.3.4 finally子句：定义清理操作Clean-up Action</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-5-异常参数exception’s-argument"><span class="toc-text">8.3.5 异常参数exception’s argument</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-4-抛出Raising异常"><span class="toc-text">8.4 抛出Raising异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-5-用户自定义User-defined异常"><span class="toc-text">8.5 用户自定义User-defined异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-7-with语句-amp-预定义的Predefined清理操作"><span class="toc-text">8.7 with语句&amp;预定义的Predefined清理操作</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 拂水飘绵送行色 应折柔条过千枝 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        初学python2.7（八）错误和异常
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-12-19 14:39:30</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="错误和异常"><a href="#错误和异常" class="headerlink" title="错误和异常"></a>错误和异常</h1><blockquote>
+<p>Learn from <a href="https://docs.python.org/2.7/tutorial/errors.html" target="_blank" rel="noopener">python2.7 official documentation</a></p>
+</blockquote>
+<p>学习至此，曾遇到过的错误信息（error messages）有两种：语法错误（syntax errors）和异常（exceptions）。</p>
+<h2 id="8-1-语法错误Syntax-Error"><a href="#8-1-语法错误Syntax-Error" class="headerlink" title="8.1 语法错误Syntax Error"></a>8.1 语法错误Syntax Error</h2><p>语法错误又称为解析错误（parsing errors），语句或表达式在语法上出错时，会引发这种错误。</p>
+<p>在错误信息中，出现输入错误的脚本文件名和错误位置的行号将被打印出来，并提示错误信息：<code>SyntaxError: invalid syntax</code>。</p>
+<h2 id="8-2-异常Exception"><a href="#8-2-异常Exception" class="headerlink" title="8.2 异常Exception"></a>8.2 异常Exception</h2><p>即使语法正确，仍在执行时检测到的错误，被称为异常。</p>
+<p>大多数的异常并不会被程序处理，而是显示错误信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> * (<span class="number">1</span>/<span class="number">0</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ZeroDivisionError: integer division <span class="keyword">or</span> modulo by zero</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span> + spam*<span class="number">3</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">NameError: name <span class="string">'spam'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: cannot concatenate <span class="string">'str'</span> <span class="keyword">and</span> <span class="string">'int'</span> objects</span><br></pre></td></tr></table></figure>
+
+<p>异常的错误信息前部分，同样会提示出现输入错误的脚本文件名和错误位置的行号，这部分通常以出现异常源代码行的堆栈回溯清单（stack traceback listing）的形式，显示出发生异常时的上下文。</p>
+<p>错误信息的最后一行，会打印出异常类型的名称和此异常的详细描述信息。作为异常类型打印的字符串是发生的内置异常（built-in exception）的名称，对于用户定义异常（user-defined exception）则不一定如此，标准的异常类型是内置的标识符（built-in identifier）而不是保留的关键字（reserved keyword）。</p>
+<h2 id="8-3-处理Handling异常"><a href="#8-3-处理Handling异常" class="headerlink" title="8.3 处理Handling异常"></a>8.3 处理Handling异常</h2><h3 id="8-3-1-try语句"><a href="#8-3-1-try语句" class="headerlink" title="8.3.1 try语句"></a>8.3.1 try语句</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        x = int(raw_input(<span class="string">"Please enter a number: "</span>))</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Oops!  That was no valid number.  Try again..."</span></span><br></pre></td></tr></table></figure>
+
+<p><code>try</code>语句工作原理：</p>
+<ul>
+<li><p>首先，执行<code>try</code>子句（<code>try</code>和<code>except</code>关键字之间的多行语句）；</p>
+</li>
+<li><p>如果没有出现异常，跳过<code>except</code>子句并完成<code>try</code>语句的执行；</p>
+</li>
+<li><p>如果出现异常，则跳过<code>try</code>子句中剩下的部分，如果异常的类型和<code>except</code>关键字后面的异常类型匹配，则执行<code>except</code>子句，然后完成<code>try</code>语句的执行，继续之后的代码；</p>
+</li>
+<li><p>如果异常类型和<code>except</code>子句中指定的不匹配，则将传递到外部的<code>try</code>语句中处理（我理解为嵌套），如果没有找到处理器，则将其判定为未处理异常（unhandled exception），并终止执行，返回异常信息。</p>
+</li>
+</ul>
+<h3 id="8-3-2-except子句"><a href="#8-3-2-except子句" class="headerlink" title="8.3.2 except子句"></a>8.3.2 except子句</h3><p>一个<code>try</code>语句可以有多个<code>except</code>子句，用于为<code>try</code>子句中可能发生的不同异常分别指定处理程序，每次执行至多执行一个处理程序。</p>
+<p><code>except</code>子句可以将多个异常命名为带括号的元组：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">except</span> (RuntimeError, TypeError, NameError):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>最后的<code>except</code>子句可以省略异常名，以用作通配符（wildcard）。此方法可以用于打印错误消息，然后重新引发异常（使用<code>raise</code>语句，令程序自行引发异常）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Unexpected error:"</span>, sys.exc_info()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-3-else子句"><a href="#8-3-3-else子句" class="headerlink" title="8.3.3 else子句"></a>8.3.3 else子句</h3><p><code>try</code>语句中，可以选择在所有的<code>except</code>子句后面，添加<code>else</code>子句，来写入<code>try</code>子句不引发异常时必须执行的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> sys.argv[<span class="number">1</span>:]:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        f = open(arg, <span class="string">'r'</span>)</span><br><span class="line">    <span class="keyword">except</span> IOError:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'cannot open'</span>, arg</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">print</span> arg, <span class="string">'has'</span>, len(f.readlines()), <span class="string">'lines'</span></span><br><span class="line">        f.close()</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-4-finally子句：定义清理操作Clean-up-Action"><a href="#8-3-4-finally子句：定义清理操作Clean-up-Action" class="headerlink" title="8.3.4 finally子句：定义清理操作Clean-up Action"></a>8.3.4 finally子句：定义清理操作Clean-up Action</h3><p><code>try</code>语句中，可以在所有的子句后面加入<code>finally</code>子句，<code>finally</code>子句一定会在<code>try</code>语句退出前执行，无论<code>try</code>子句中是否触发异常</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">divide</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        result = x / y</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"division by zero!"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"result is"</span>, result</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"executing finally clause"</span></span><br><span class="line"></span><br><span class="line">divide(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>result <span class="keyword">is</span> <span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>executing <span class="keyword">finally</span> clause</span><br><span class="line"></span><br><span class="line">divide(<span class="number">2</span>, <span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>division by zero!</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>executing <span class="keyword">finally</span> clause</span><br><span class="line"></span><br><span class="line">divide(<span class="string">"2"</span>, <span class="string">"1"</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">executing <span class="keyword">finally</span> clause</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"stdy15.py"</span>, line <span class="number">15</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    divide(<span class="string">"2"</span>, <span class="string">"1"</span>)</span><br><span class="line">  File <span class="string">"stdy15.py"</span>, line <span class="number">3</span>, <span class="keyword">in</span> divide</span><br><span class="line">    result = x / y</span><br><span class="line">TypeError: unsupported operand type(s) <span class="keyword">for</span> /: <span class="string">'str'</span> <span class="keyword">and</span> <span class="string">'str'</span></span><br></pre></td></tr></table></figure>
+
+<p>在实际应用程序中，<code>finally</code>子句用于定义必须在所有情况下执行的清理操作，尤其对于释放外部资源（如文件、网络连接）十分有用。</p>
+<h3 id="8-3-5-异常参数exception’s-argument"><a href="#8-3-5-异常参数exception’s-argument" class="headerlink" title="8.3.5 异常参数exception’s argument"></a>8.3.5 异常参数exception’s argument</h3><p>当一个异常发生时，它所具有的相关信息（associated value）称为异常参数，参数的存在与否及其类型，取决于异常类型。异常参数一般作为未处理异常中错误信息的最后一部分打印出来。</p>
+<p><code>except</code>子句可以在异常名后，使用<code>as</code>关键字来指定一个变量，该变量与包含<code>instance.args</code>中存储的异常参数的异常实例（exception instance）绑定，由于异常实例定义了<code>__str()__</code>，所以异常参数可以通过此变量直接打印，而不必引用<code>.args</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">'spam'</span>, <span class="string">'eggs'</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> inst:</span><br><span class="line">    <span class="keyword">print</span> type(inst)  <span class="comment"># 异常实例类型</span></span><br><span class="line">    <span class="keyword">print</span> inst.args</span><br><span class="line">    <span class="keyword">print</span> inst</span><br><span class="line">    x, y = inst.args</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'x ='</span>, x</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'y ='</span>, y</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>&lt;type <span class="string">'exceptions.Exception'</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="string">'spam'</span>, <span class="string">'eggs'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="string">'spam'</span>, <span class="string">'eggs'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = spam</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = eggs</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-4-抛出Raising异常"><a href="#8-4-抛出Raising异常" class="headerlink" title="8.4 抛出Raising异常"></a>8.4 抛出Raising异常</h2><p><code>raise</code>语句可以用来强制引发指定的异常：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span> NameError(<span class="string">'HiThere'</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">NameError: HiThere</span><br></pre></td></tr></table></figure>
+
+<p><code>raise</code>语句的唯一参数表示要引发的异常，这个参数必须是一个异常实例或异常类（由<code>Exception</code>派生的类）。</p>
+<h2 id="8-5-用户自定义User-defined异常"><a href="#8-5-用户自定义User-defined异常" class="headerlink" title="8.5 用户自定义User-defined异常"></a>8.5 用户自定义User-defined异常</h2><p>可以通过创建一个新的异常类，来为自定义异常命名，异常类必须直接或间接地继承<code>Exception</code>类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyError</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> repr(self.value)</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>Exception</code>默认的<code>__init()__</code>方法被重写，新的方法只是简单的创建类中的一个<code>value</code>属性，这将替代原方法中创建<code>args</code>属性的默认行为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">raise</span> MyError(<span class="number">2</span> * <span class="number">2</span>)</span><br><span class="line"><span class="keyword">except</span> MyError <span class="keyword">as</span> e:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'My exception occurred, value:'</span>, e.value</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>My exception occurred, value: <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">raise</span> MyError(<span class="string">'oops!'</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"stdy15.py"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    <span class="keyword">raise</span> MyError(<span class="string">'oops!'</span>)</span><br><span class="line">__main__.MyError: <span class="string">'oops!'</span></span><br></pre></td></tr></table></figure>
+
+<p>大多数异常都定义为名称以<code>&quot;Error&quot;</code>结尾，类似于标准异常的命名。</p>
+<h2 id="8-7-with语句-amp-预定义的Predefined清理操作"><a href="#8-7-with语句-amp-预定义的Predefined清理操作" class="headerlink" title="8.7 with语句&amp;预定义的Predefined清理操作"></a>8.7 with语句&amp;预定义的Predefined清理操作</h2><p>某些对象定义了在不再需要该对象时要执行的标准清理操作，无论使用该对象的操作是成功还是失败。<code>with</code>语句允许这样的对象总是保证被即使清理：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"myfile.txt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="keyword">print</span> line,</span><br></pre></td></tr></table></figure>
+
+<p>在执行语句之后，<code>File</code>对象<code>f</code>总是关闭的，即使在执行过程中遇到了问题。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="">FlowerMushroom&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="">この世界私は大好きです</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
